@@ -39,6 +39,7 @@ import {
   type SearchTabNavigatorParams,
 } from '#/lib/routes/types'
 import {type RouteParams, type State} from '#/lib/routes/types'
+import {logScreenView} from '#/lib/analytics'
 import {attachRouteToLogEvents, logEvent} from '#/lib/statsig/statsig'
 import {bskyTitle} from '#/lib/strings/headings'
 import {logger} from '#/logger'
@@ -70,6 +71,7 @@ import {TermsOfServiceScreen} from '#/view/screens/TermsOfService'
 import {BottomBar} from '#/view/shell/bottom-bar/BottomBar'
 import {createNativeStackNavigatorWithAuth} from '#/view/shell/createNativeStackNavigatorWithAuth'
 import {BookmarksScreen} from '#/screens/Bookmarks'
+import {SubscriptionScreen} from '#/screens/Subscription'
 import {SharedPreferencesTesterScreen} from '#/screens/E2E/SharedPreferencesTesterScreen'
 import HashtagScreen from '#/screens/Hashtag'
 import {LogScreen} from '#/screens/Log'
@@ -609,6 +611,14 @@ function commonScreens(Stack: typeof Flat, unreadCountLabel?: string) {
           requireAuth: true,
         }}
       />
+      <Stack.Screen
+        name="Subscription"
+        getComponent={() => SubscriptionScreen}
+        options={{
+          title: title(msg`Subscription`),
+          requireAuth: false,
+        }}
+      />
     </>
   )
 }
@@ -961,12 +971,17 @@ function RoutesContainer({children}: React.PropsWithChildren<{}>) {
         linking={LINKING}
         theme={theme}
         onStateChange={() => {
+          const currentRouteName = getCurrentRouteName()
           logger.metric(
             'router:navigate',
             {from: prevLoggedRouteName.current},
             {statsig: false},
           )
-          prevLoggedRouteName.current = getCurrentRouteName()
+          prevLoggedRouteName.current = currentRouteName
+          // Log screen view to Firebase Analytics
+          if (currentRouteName) {
+            logScreenView(currentRouteName)
+          }
         }}
         onReady={() => {
           attachRouteToLogEvents(getCurrentRouteName)

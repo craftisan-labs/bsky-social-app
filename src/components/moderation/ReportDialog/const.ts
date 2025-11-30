@@ -3,8 +3,8 @@ import {
   ToolsOzoneReportDefs as OzoneReportDefs,
 } from '@atproto/api'
 
-export const DMCA_LINK = 'https://bsky.social/about/support/copyright'
-export const SUPPORT_PAGE = 'https://bsky.social/about/support'
+export const DMCA_LINK = 'https://bluefly.craftisanlabs.com/copyright-policy'
+export const SUPPORT_PAGE = 'https://bluefly.craftisanlabs.com/support'
 
 export const NEW_TO_OLD_REASON_MAPPING: Record<string, string> = {}
 

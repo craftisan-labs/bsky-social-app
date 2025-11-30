@@ -1,77 +1,82 @@
-# Bluesky Social App
+# BlueFly - Bluesky Client for Amazon Fire Devices
 
-Welcome friends! This is the codebase for the Bluesky Social app.
+> ⚠️ **IMPORTANT DISCLAIMER**: This is an **unofficial third-party Bluesky client** developed independently by CraftisanLabs. This application is **NOT** endorsed by, affiliated with, or sponsored by Bluesky Social PBC. For the official Bluesky app, visit [bsky.app](https://bsky.app).
 
-Get the app itself:
+BlueFly is a feature-rich Bluesky client designed specifically for Amazon Fire tablets and devices, available on the Amazon Appstore.
 
-- **Web: [bsky.app](https://bsky.app)**
-- **iOS: [App Store](https://apps.apple.com/us/app/bluesky-social/id6444370199)**
-- **Android: [Play Store](https://play.google.com/store/apps/details?id=xyz.blueskyweb.app)**
+## 🚀 Features
 
-## Development Resources
+- Full Bluesky social network access
+- Optimized for Fire tablets
+- Timeline, posts, profiles, and notifications
+- Direct messages
+- Content moderation tools
+- Custom feeds support
+- Image and video sharing
 
-This is a [React Native](https://reactnative.dev/) application, written in the TypeScript programming language. It builds on the `atproto` TypeScript packages (like [`@atproto/api`](https://www.npmjs.com/package/@atproto/api)), which are also open source, but in [a different git repository](https://github.com/bluesky-social/atproto).
+## 📱 Get the App
 
-There is a small amount of Go language source code (in `./bskyweb/`), for a web service that returns the React Native Web application.
+- **Amazon Appstore**: Coming Soon
+- **Website**: [bluefly.craftisanlabs.com](https://bluefly.craftisanlabs.com)
 
-The [Build Instructions](./docs/build.md) are a good place to get started with the app itself.
+## 📋 Legal & Compliance
 
-The Authenticated Transfer Protocol ("AT Protocol" or "atproto") is a decentralized social media protocol. You don't *need* to understand AT Protocol to work with this application, but it can help. Learn more at:
+- **Privacy Policy**: [View Privacy Policy](https://bluefly.craftisanlabs.com/privacy-policy.pdf)
+- **Terms of Service**: [View Terms of Service](https://bluefly.craftisanlabs.com/terms-of-service.pdf)
+- **API Compliance**: [View Compliance Statement](https://bluefly.craftisanlabs.com/bluesky-api-at-protocol-compliance-statement.pdf)
 
-- [Overview and Guides](https://atproto.com/guides/overview)
-- [GitHub Discussions](https://github.com/bluesky-social/atproto/discussions) 👈 Great place to ask questions
+## 🔧 Technical Details
+
+This application is built on:
+- [React Native](https://reactnative.dev/) with TypeScript
+- [@atproto/api](https://www.npmjs.com/package/@atproto/api) - Official AT Protocol SDK
+- [Expo](https://expo.dev/) for cross-platform development
+
+### AT Protocol
+
+BlueFly uses the Authenticated Transfer Protocol (AT Protocol) to communicate with Bluesky servers. Learn more:
+- [AT Protocol Overview](https://atproto.com/guides/overview)
 - [Protocol Specifications](https://atproto.com/specs/atp)
-- [Blogpost on self-authenticating data structures](https://bsky.social/about/blog/3-6-2022-a-self-authenticating-social-protocol)
 
-The Bluesky Social application encompasses a set of schemas and APIs built in the overall AT Protocol framework. The namespace for these "Lexicons" is `app.bsky.*`.
+## 🔒 Privacy & Security
 
-## Contributions
+BlueFly is committed to user privacy:
+- **No password storage** - We use official AT Protocol authentication
+- **No tracking or analytics** - We don't collect user data
+- **Local-only caching** - Data is stored only on your device
+- **Direct API communication** - All data flows directly to/from Bluesky servers
 
-> [!NOTE]
-> While we do accept contributions, we prioritize high quality issues and pull requests. Adhering to the below guidelines will ensure a more timely review.
+## 📞 Support
 
-**Rules:**
+- **Email**: support@craftisanlabs.com
+- **Website**: [bluefly.craftisanlabs.com](https://bluefly.craftisanlabs.com)
 
-- We may not respond to your issue or PR.
-- We may close an issue or PR without much feedback.
-- We may lock discussions or contributions if our attention is getting DDOSed.
-- We're not going to provide support for build issues.
+## 📄 License
 
-**Guidelines:**
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-- Check for existing issues before filing a new one please.
-- Open an issue and give some time for discussion before submitting a PR.
-- Stay away from PRs like...
-  - Changing "Post" to "Skeet."
-  - Refactoring the codebase, e.g., to replace React Query with Redux Toolkit or something.
-  - Adding entirely new features without prior discussion. 
+### Original Source Attribution
 
-Remember, we serve a wide community of users. Our day-to-day involves us constantly asking "which top priority is our top priority." If you submit well-written PRs that solve problems concisely, that's an awesome contribution. Otherwise, as much as we'd love to accept your ideas and contributions, we really don't have the bandwidth. That's what forking is for!
+This application is based on the open-source [Bluesky Social App](https://github.com/bluesky-social/social-app) codebase, which is licensed under the MIT License.
 
-## Forking guidelines
+```
+Copyright (c) 2023 Bluesky Social PBC
 
-You have our blessing 🪄✨ to fork this application! However, it's very important to be clear to users when you're giving them a fork.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Please be sure to:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
 
-- Change all branding in the repository and UI to clearly differentiate from Bluesky.
-- Change any support links (feedback, email, terms of service, etc) to your own systems.
-- Replace any analytics or error-collection systems with your own so we don't get super confused.
+## 🏢 About CraftisanLabs
 
-## Security disclosures
+CraftisanLabs is an independent software development company. BlueFly is developed and maintained by CraftisanLabs.
 
-If you discover any security issues, please send an email to security@bsky.app. The email is automatically CC'd to the entire team and we'll respond promptly.
+---
 
-## Are you a developer interested in building on atproto?
-
-Bluesky is an open social network built on the AT Protocol, a flexible technology that will never lock developers out of the ecosystems that they help build. With atproto, third-party integration can be as seamless as first-party through custom feeds, federated services, clients, and more.
-
-## License (MIT)
-
-See [./LICENSE](./LICENSE) for the full license.
-
-Bluesky Social PBC has committed to a software patent non-aggression pledge. For details see [the original announcement](https://bsky.social/about/blog/10-01-2025-patent-pledge).
-
-## P.S.
-
-We ❤️ you and all of the ways you support us. Thank you for making Bluesky a great place!
+**Disclaimer**: Bluesky, the Bluesky logo, and related marks are trademarks of Bluesky Social PBC. BlueFly is not affiliated with, endorsed by, or sponsored by Bluesky Social PBC.

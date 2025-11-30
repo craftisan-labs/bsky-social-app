@@ -35,11 +35,11 @@ export const TermsOfServiceScreen = (_props: Props) => {
       <ScrollView style={[s.hContentRegion, pal.view]}>
         <View style={[s.p20]}>
           <Text style={pal.text}>
-            <Trans>The Terms of Service have been moved to</Trans>{' '}
+            <Trans>View the Terms of Service at</Trans>{' '}
             <TextLink
               style={pal.link}
-              href="https://bsky.social/about/support/tos"
-              text="bsky.social/about/support/tos"
+              href="https://bluefly.craftisanlabs.com/terms-of-service.pdf"
+              text="bluefly.craftisanlabs.com/terms-of-service"
             />
           </Text>
         </View>

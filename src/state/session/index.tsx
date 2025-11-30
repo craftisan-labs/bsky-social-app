@@ -1,6 +1,7 @@
 import React from 'react'
 import {type AtpSessionEvent, type BskyAgent} from '@atproto/api'
 
+import {firebaseAnalytics, logUserJourney} from '#/lib/analytics'
 import {isWeb} from '#/platform/detection'
 import * as persisted from '#/state/persisted'
 import {useCloseAllActiveElements} from '#/state/util'
@@ -128,6 +129,10 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
         newAccount: account,
       })
       logger.metric('account:create:success', metrics, {statsig: true})
+      // Firebase Analytics - Signup completed
+      firebaseAnalytics.logSignUp('email')
+      firebaseAnalytics.setUserId(account.did)
+      logUserJourney('signup_completed', {handle: account.handle})
       addSessionDebugLog({type: 'method:end', method: 'createAccount', account})
     },
     [store, onAgentSessionChange, cancelPendingTask],
@@ -155,6 +160,10 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
         {logContext, withPassword: true},
         {statsig: true},
       )
+      // Firebase Analytics - Login completed
+      firebaseAnalytics.logLogin('email')
+      firebaseAnalytics.setUserId(account.did)
+      logUserJourney('login_completed', {logContext})
       addSessionDebugLog({type: 'method:end', method: 'login', account})
     },
     [store, onAgentSessionChange, cancelPendingTask],
@@ -174,6 +183,9 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
         {logContext, scope: 'current'},
         {statsig: true},
       )
+      // Firebase Analytics - Logout
+      logUserJourney('logout', {logContext, scope: 'current'})
+      firebaseAnalytics.resetAnalyticsData()
       addSessionDebugLog({type: 'method:end', method: 'logout'})
     },
     [store, cancelPendingTask],
@@ -193,6 +205,9 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
         {logContext, scope: 'every'},
         {statsig: true},
       )
+      // Firebase Analytics - Logout all accounts
+      logUserJourney('logout', {logContext, scope: 'every'})
+      firebaseAnalytics.resetAnalyticsData()
       addSessionDebugLog({type: 'method:end', method: 'logout'})
     },
     [store, cancelPendingTask],
@@ -219,6 +234,9 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
         newAgent: agent,
         newAccount: account,
       })
+      // Firebase Analytics - Session resumed
+      firebaseAnalytics.setUserId(account.did)
+      logUserJourney('session_resumed', {handle: account.handle})
       addSessionDebugLog({type: 'method:end', method: 'resumeSession', account})
     },
     [store, onAgentSessionChange, cancelPendingTask],

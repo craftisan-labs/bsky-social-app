@@ -129,9 +129,9 @@ function BirthdayInner({
       {isUnder13 && (
         <Admonition type="error">
           <Trans>
-            You must be at least 13 years old to use Bluesky. Read our{' '}
+            You must be at least 13 years old to use this app. Read our{' '}
             <InlineLinkText
-              to="https://bsky.social/about/support/tos"
+              to="https://bluefly.craftisanlabs.com/terms-of-service.pdf"
               label={_(msg`Terms of Service`)}>
               Terms of Service
             </InlineLinkText>{' '}

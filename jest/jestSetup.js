@@ -105,12 +105,20 @@ jest.mock('expo-localization', () => ({
   getLocales: () => [],
 }))
 
+// Statsig removed - no longer needed
 jest.mock('statsig-react-native-expo', () => ({
   Statsig: {
     initialize() {},
     initializeCalled() {
       return false
     },
+    getStableID() {
+      return 'test-device-id'
+    },
+    checkGate() {
+      return false
+    },
+    logEvent() {},
   },
 }))
 

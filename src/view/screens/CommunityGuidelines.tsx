@@ -39,11 +39,11 @@ export const CommunityGuidelinesScreen = (_props: Props) => {
         <View style={[s.p20]}>
           <Text style={pal.text}>
             <Trans>
-              The Community Guidelines have been moved to{' '}
+              View the Community Guidelines at{' '}
               <TextLink
                 style={pal.link}
-                href="https://bsky.social/about/support/community-guidelines"
-                text="bsky.social/about/support/community-guidelines"
+                href="https://bluefly.craftisanlabs.com/community-guidelines"
+                text="bluefly.craftisanlabs.com/community-guidelines"
               />
             </Trans>
           </Text>

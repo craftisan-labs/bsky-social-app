@@ -248,6 +248,13 @@ export function SettingsScreen({}: Props) {
             </SettingsList.ItemText>
           </SettingsList.LinkItem>
           <SettingsList.Divider />
+          <SettingsList.LinkItem to="/subscription" label={_(msg`Subscription`)}>
+            <SettingsList.ItemIcon icon={PersonIcon} />
+            <SettingsList.ItemText>
+              <Trans>BlueFly Premium</Trans>
+            </SettingsList.ItemText>
+          </SettingsList.LinkItem>
+          <SettingsList.Divider />
           <SettingsList.PressableItem
             destructive
             onPress={() => signOutPromptControl.open()}

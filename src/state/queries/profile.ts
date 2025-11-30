@@ -18,6 +18,7 @@ import {
 } from '@tanstack/react-query'
 
 import {uploadBlob} from '#/lib/api'
+import {logInteraction} from '#/lib/analytics'
 import {until} from '#/lib/async/until'
 import {useToggleMutationQueue} from '#/lib/hooks/useToggleMutationQueue'
 import {logEvent, type LogEvents, toClout} from '#/lib/statsig/statsig'
@@ -350,7 +351,10 @@ function useProfileFollowMutation(
         position,
         contextProfileDid,
       })
-      return await agent.follow(did)
+      const result = await agent.follow(did)
+      // Firebase Analytics
+      logInteraction('user_followed', {userDid: did})
+      return result
     },
   })
 }
@@ -360,9 +364,11 @@ function useProfileUnfollowMutation(
 ) {
   const agent = useAgent()
   return useMutation<void, Error, {did: string; followUri: string}>({
-    mutationFn: async ({followUri}) => {
+    mutationFn: async ({did, followUri}) => {
       logEvent('profile:unfollow', {logContext})
-      return await agent.deleteFollow(followUri)
+      await agent.deleteFollow(followUri)
+      // Firebase Analytics
+      logInteraction('user_unfollowed', {userDid: did})
     },
   })
 }

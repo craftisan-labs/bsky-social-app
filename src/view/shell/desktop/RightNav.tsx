@@ -109,13 +109,13 @@ export function DesktopRightNav({routeName}: {routeName: string}) {
           </>
         )}
         <InlineLinkText
-          to="https://bsky.social/about/support/privacy-policy"
+          to="https://bluefly.craftisanlabs.com/privacy-policy.pdf"
           label={_(msg`Privacy`)}>
           {_(msg`Privacy`)}
         </InlineLinkText>
         {' • '}
         <InlineLinkText
-          to="https://bsky.social/about/support/tos"
+          to="https://bluefly.craftisanlabs.com/terms-of-service.pdf"
           label={_(msg`Terms`)}>
           {_(msg`Terms`)}
         </InlineLinkText>

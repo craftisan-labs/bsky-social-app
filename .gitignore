@@ -124,3 +124,9 @@ bskyogcard/src/assets/fonts/noto-*
 bskyweb/static/media/*.webp
 bskyweb/static/media/*.jpg
 bskyweb/static/media/*.png
+
+# BlueFly specific
+AppstoreAuthenticationKey.pem
+.envrc
+firebase.json
+google-services.json

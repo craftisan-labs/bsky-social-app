@@ -17,43 +17,43 @@ module.exports = function (_config) {
   const IS_PRODUCTION = process.env.EXPO_PUBLIC_ENV === 'production'
   const IS_DEV = !IS_TESTFLIGHT || !IS_PRODUCTION
 
+  // BlueFly by CraftisanLabs - Associated domains for deep linking
   const ASSOCIATED_DOMAINS = [
-    'applinks:bsky.app',
-    'applinks:staging.bsky.app',
-    'appclips:bsky.app',
-    'appclips:go.bsky.app', // Allows App Clip to work when scanning QR codes
+    'applinks:bluefly.craftisanlabs.com',
     // When testing local services, enter an ngrok (et al) domain here. It must use a standard HTTP/HTTPS port.
     ...(IS_DEV || IS_TESTFLIGHT ? [] : []),
   ]
 
   const UPDATES_ENABLED = IS_TESTFLIGHT || IS_PRODUCTION
 
+  // Sentry error tracking - set SENTRY_AUTH_TOKEN env var to enable
+  // TODO: Set up your own Sentry project at https://sentry.io
   const USE_SENTRY = Boolean(process.env.SENTRY_AUTH_TOKEN)
 
   return {
     expo: {
       version: VERSION,
-      name: 'Bluesky',
-      slug: 'bluesky',
-      scheme: 'bluesky',
-      owner: 'blueskysocial',
+      name: 'BlueFly',
+      slug: 'bluefly',
+      scheme: 'bluefly',
+      owner: 'craftisanlabs',
       runtimeVersion: {
         policy: 'appVersion',
       },
-      icon: './assets/app-icons/ios_icon_default_next.png',
+      icon: './assets/app-icons/bluefly-logo-lg.png',
       userInterfaceStyle: 'automatic',
       primaryColor: '#1083fe',
       newArchEnabled: false,
       ios: {
-        supportsTablet: false,
-        bundleIdentifier: 'xyz.blueskyweb.app',
+        supportsTablet: true, // Support Fire tablets
+        bundleIdentifier: 'com.craftisanlabs.bluefly',
         config: {
           usesNonExemptEncryption: false,
         },
         icon:
           PLATFORM === 'web' // web build doesn't like .icon files
-            ? './assets/app-icons/ios_icon_default_next.png'
-            : './assets/app-icons/ios_icon_default.icon',
+            ? './assets/app-icons/bluefly-logo-lg.png'
+            : './assets/app-icons/bluefly-logo-lg.png',
         infoPlist: {
           UIBackgroundModes: ['remote-notification'],
           NSCameraUsageDescription:
@@ -64,7 +64,7 @@ module.exports = function (_config) {
             'Used to save images to your library.',
           NSPhotoLibraryUsageDescription:
             'Used for profile pictures, posts, and other kinds of content',
-          CFBundleSpokenName: 'Blue Sky',
+          CFBundleSpokenName: 'Blue Fly',
           CFBundleLocalizations: [
             'en',
             'an',
@@ -113,7 +113,7 @@ module.exports = function (_config) {
         entitlements: {
           'com.apple.developer.kernel.increased-memory-limit': true,
           'com.apple.developer.kernel.extended-virtual-addressing': true,
-          'com.apple.security.application-groups': 'group.app.bsky',
+          'com.apple.security.application-groups': 'group.com.craftisanlabs.bluefly',
         },
         privacyManifests: {
           NSPrivacyCollectedDataTypes: [
@@ -175,14 +175,15 @@ module.exports = function (_config) {
         barStyle: 'light-content',
       },
       android: {
-        icon: './assets/app-icons/android_icon_default_next.png',
+        icon: './assets/app-icons/bluefly-logo-lg.png',
         adaptiveIcon: {
-          foregroundImage: './assets/icon-android-foreground.png',
-          monochromeImage: './assets/icon-android-monochrome.png',
-          backgroundColor: '#006AFF',
+          foregroundImage: './assets/app-icons/bluefly-logo-lg.png',
+          monochromeImage: './assets/app-icons/bluefly-logo-lg.png',
+          backgroundColor: '#0085FF',
         },
+        // Firebase configuration file
         googleServicesFile: './google-services.json',
-        package: 'xyz.blueskyweb.app',
+        package: 'com.craftisanlabs.bluefly',
         intentFilters: [
           {
             action: 'VIEW',
@@ -190,7 +191,7 @@ module.exports = function (_config) {
             data: [
               {
                 scheme: 'https',
-                host: 'bsky.app',
+                host: 'bluefly.craftisanlabs.com',
               },
               IS_DEV && {
                 scheme: 'http',
@@ -204,37 +205,23 @@ module.exports = function (_config) {
       web: {
         favicon: './assets/favicon.png',
       },
+      // Expo Updates - disabled for Amazon Appstore (use store updates instead)
       updates: {
-        url: 'https://updates.bsky.app/manifest',
-        enabled: UPDATES_ENABLED,
-        fallbackToCacheTimeout: 30000,
-        codeSigningCertificate: UPDATES_ENABLED
-          ? './code-signing/certificate.pem'
-          : undefined,
-        codeSigningMetadata: UPDATES_ENABLED
-          ? {
-              keyid: 'main',
-              alg: 'rsa-v1_5-sha256',
-            }
-          : undefined,
+        enabled: false,
         checkAutomatically: 'NEVER',
       },
       plugins: [
         'expo-video',
         'expo-localization',
         'expo-web-browser',
+        './plugins/withDisableFirebaseCrashlytics.js',
+        './plugins/withExcludeFirebaseCrashlytics.js',
         [
           'react-native-edge-to-edge',
           {android: {enforceNavigationBarContrast: false}},
         ],
-        USE_SENTRY && [
-          '@sentry/react-native/expo',
-          {
-            organization: 'blueskyweb',
-            project: 'app',
-            url: 'https://sentry.io',
-          },
-        ],
+        // Firebase is configured via google-services.json (already included)
+        // The @react-native-firebase/* packages handle their own native setup
         [
           'expo-build-properties',
           {
@@ -252,18 +239,12 @@ module.exports = function (_config) {
         [
           'expo-notifications',
           {
-            icon: './assets/icon-android-notification.png',
-            color: '#1185fe',
+            icon: './assets/app-icons/bluefly-logo-lg.png',
+            color: '#0085FF',
             sounds: PLATFORM === 'ios' ? ['assets/dm.aiff'] : ['assets/dm.mp3'],
           },
         ],
         'react-native-compressor',
-        [
-          '@bitdrift/react-native',
-          {
-            networkInstrumentation: true,
-          },
-        ],
         './plugins/starterPackAppClipExtension/withStarterPackAppClip.js',
         './plugins/withGradleJVMHeapSizeIncrease.js',
         './plugins/withAndroidManifestLargeHeapPlugin.js',
@@ -272,6 +253,7 @@ module.exports = function (_config) {
         './plugins/withAndroidStylesAccentColorPlugin.js',
         './plugins/withAndroidDayNightThemePlugin.js',
         './plugins/withAndroidNoJitpackPlugin.js',
+        './plugins/withAmazonIAP.js', // Amazon In-App Purchasing
         './plugins/shareExtension/withShareExtensions.js',
         './plugins/notificationsExtension/withNotificationsExtension.js',
         [
@@ -323,71 +305,17 @@ module.exports = function (_config) {
           '@mozzius/expo-dynamic-app-icon',
           {
             /**
-             * Default set
+             * BlueFly default icon
              */
-            default_light: {
-              ios: './assets/app-icons/ios_icon_legacy_light.png',
-              android: './assets/app-icons/android_icon_legacy_light.png',
-              prerendered: true,
-            },
-            default_dark: {
-              ios: './assets/app-icons/ios_icon_legacy_dark.png',
-              android: './assets/app-icons/android_icon_legacy_dark.png',
-              prerendered: true,
-            },
-
-            /**
-             * Bluesky+ core set
-             */
-            core_aurora: {
-              ios: './assets/app-icons/ios_icon_core_aurora.png',
-              android: './assets/app-icons/android_icon_core_aurora.png',
-              prerendered: true,
-            },
-            core_bonfire: {
-              ios: './assets/app-icons/ios_icon_core_bonfire.png',
-              android: './assets/app-icons/android_icon_core_bonfire.png',
-              prerendered: true,
-            },
-            core_sunrise: {
-              ios: './assets/app-icons/ios_icon_core_sunrise.png',
-              android: './assets/app-icons/android_icon_core_sunrise.png',
-              prerendered: true,
-            },
-            core_sunset: {
-              ios: './assets/app-icons/ios_icon_core_sunset.png',
-              android: './assets/app-icons/android_icon_core_sunset.png',
-              prerendered: true,
-            },
-            core_midnight: {
-              ios: './assets/app-icons/ios_icon_core_midnight.png',
-              android: './assets/app-icons/android_icon_core_midnight.png',
-              prerendered: true,
-            },
-            core_flat_blue: {
-              ios: './assets/app-icons/ios_icon_core_flat_blue.png',
-              android: './assets/app-icons/android_icon_core_flat_blue.png',
-              prerendered: true,
-            },
-            core_flat_white: {
-              ios: './assets/app-icons/ios_icon_core_flat_white.png',
-              android: './assets/app-icons/android_icon_core_flat_white.png',
-              prerendered: true,
-            },
-            core_flat_black: {
-              ios: './assets/app-icons/ios_icon_core_flat_black.png',
-              android: './assets/app-icons/android_icon_core_flat_black.png',
-              prerendered: true,
-            },
-            core_classic: {
-              ios: './assets/app-icons/ios_icon_core_classic.png',
-              android: './assets/app-icons/android_icon_core_classic.png',
+            bluefly_default: {
+              ios: './assets/app-icons/bluefly-logo-lg.png',
+              android: './assets/app-icons/bluefly-logo-lg.png',
               prerendered: true,
             },
           },
         ],
         ['expo-screen-orientation', {initialOrientation: 'PORTRAIT_UP'}],
-        ['expo-location'],
+        // expo-location removed - not needed for core functionality
       ].filter(Boolean),
       extra: {
         eas: {
@@ -396,32 +324,33 @@ module.exports = function (_config) {
               ios: {
                 appExtensions: [
                   {
-                    targetName: 'Share-with-Bluesky',
-                    bundleIdentifier: 'xyz.blueskyweb.app.Share-with-Bluesky',
+                    targetName: 'Share-with-BlueFly',
+                    bundleIdentifier: 'com.craftisanlabs.bluefly.Share-with-BlueFly',
                     entitlements: {
                       'com.apple.security.application-groups': [
-                        'group.app.bsky',
+                        'group.com.craftisanlabs.bluefly',
                       ],
                     },
                   },
                   {
-                    targetName: 'BlueskyNSE',
-                    bundleIdentifier: 'xyz.blueskyweb.app.BlueskyNSE',
+                    targetName: 'BlueFlyNSE',
+                    bundleIdentifier: 'com.craftisanlabs.bluefly.BlueFlyNSE',
                     entitlements: {
                       'com.apple.security.application-groups': [
-                        'group.app.bsky',
+                        'group.com.craftisanlabs.bluefly',
                       ],
                     },
                   },
                   {
-                    targetName: 'BlueskyClip',
-                    bundleIdentifier: 'xyz.blueskyweb.app.AppClip',
+                    targetName: 'BlueFlyClip',
+                    bundleIdentifier: 'com.craftisanlabs.bluefly.AppClip',
                   },
                 ],
               },
             },
           },
-          projectId: '55bd077a-d905-4184-9c7f-94789ba0f302',
+          // TODO: Create your own EAS project at https://expo.dev and update this ID
+          projectId: 'YOUR_EAS_PROJECT_ID',
         },
       },
     },

@@ -80,15 +80,14 @@ export const CHAT_PROXY_DID: Did =
   process.env.EXPO_PUBLIC_CHAT_PROXY_DID || 'did:web:api.bsky.chat'
 
 /**
- * Sentry DSN for telemetry
+ * Sentry DSN for telemetry (DEPRECATED - BlueFly uses Firebase Crashlytics)
  */
 export const SENTRY_DSN: string | undefined = process.env.EXPO_PUBLIC_SENTRY_DSN
 
 /**
- * Bitdrift API key. If undefined, Bitdrift should be disabled.
+ * Bitdrift API key (DEPRECATED - BlueFly uses Firebase Analytics)
  */
-export const BITDRIFT_API_KEY: string | undefined =
-  process.env.EXPO_PUBLIC_BITDRIFT_API_KEY
+export const BITDRIFT_API_KEY: string | undefined = undefined
 
 /**
  * GCP project ID which is required for native device attestation. On web, this

@@ -36,11 +36,11 @@ export const CopyrightPolicyScreen = (_props: Props) => {
         <View style={[s.p20]}>
           <Text style={pal.text}>
             <Trans>
-              The Copyright Policy has been moved to{' '}
+              View the Copyright Policy at{' '}
               <TextLink
                 style={pal.link}
-                href="https://bsky.social/about/support/copyright"
-                text="bsky.social/about/support/copyright"
+                href="https://bluefly.craftisanlabs.com/copyright-policy"
+                text="bluefly.craftisanlabs.com/copyright-policy"
               />
             </Trans>
           </Text>

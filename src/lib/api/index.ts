@@ -22,6 +22,7 @@ import {sha256} from 'js-sha256'
 import {CID} from 'multiformats/cid'
 import * as Hasher from 'multiformats/hashes/hasher'
 
+import {logInteraction} from '#/lib/analytics'
 import {isNetworkError} from '#/lib/strings/errors'
 import {shortenLinks, stripInvalidMentions} from '#/lib/strings/rich-text-manip'
 import {logger} from '#/logger'
@@ -189,6 +190,13 @@ export async function post(
       throw e
     }
   }
+
+  // Firebase Analytics - Post created
+  logInteraction('post_created', {
+    postCount: uris.length,
+    hasReply: !!opts.replyTo,
+    hasMedia: thread.posts.some(p => p.embed?.media?.type === 'images' || p.embed?.media?.type === 'video'),
+  })
 
   return {uris}
 }

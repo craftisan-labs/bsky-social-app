@@ -13,6 +13,7 @@ import {
   useInfiniteQuery,
 } from '@tanstack/react-query'
 
+import {firebaseAnalytics} from '#/lib/analytics'
 import {useModerationOpts} from '#/state/preferences/moderation-opts'
 import {useAgent} from '#/state/session'
 import {
@@ -61,6 +62,10 @@ export function useSearchPostsQuery({
   >({
     queryKey: searchPostsQueryKey({query, sort}),
     queryFn: async ({pageParam}) => {
+      // Log search only for the first page (initial search)
+      if (!pageParam) {
+        firebaseAnalytics.logSearch(query)
+      }
       const res = await agent.app.bsky.feed.searchPosts({
         q: query,
         limit: 25,

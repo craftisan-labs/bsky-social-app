@@ -11,8 +11,8 @@ export const BSKY_SERVICE = 'https://bsky.social'
 export const BSKY_SERVICE_DID = 'did:web:bsky.social'
 export const PUBLIC_BSKY_SERVICE = 'https://public.api.bsky.app'
 export const DEFAULT_SERVICE = BSKY_SERVICE
-const HELP_DESK_LANG = 'en-us'
-export const HELP_DESK_URL = `https://blueskyweb.zendesk.com/hc/${HELP_DESK_LANG}`
+// BlueFly Support
+export const HELP_DESK_URL = `https://bluefly.craftisanlabs.com/support`
 export const EMBED_SERVICE = 'https://embed.bsky.app'
 export const EMBED_SCRIPT = `${EMBED_SERVICE}/static/embed.js`
 export const BSKY_DOWNLOAD_URL = 'https://bsky.app/download'
@@ -113,7 +113,7 @@ export function LINK_META_PROXY(serviceUrl: string) {
   return STAGING_LINK_META_PROXY
 }
 
-export const STATUS_PAGE_URL = 'https://status.bsky.app/'
+export const STATUS_PAGE_URL = 'https://bluefly.craftisanlabs.com/status'
 
 // Hitslop constants
 export const createHitslop = (size: number): Insets => ({
@@ -235,8 +235,8 @@ export const BLUESKY_MOD_SERVICE_HEADERS = {
 }
 
 export const webLinks = {
-  tos: `https://bsky.social/about/support/tos`,
-  privacy: `https://bsky.social/about/support/privacy-policy`,
-  community: `https://bsky.social/about/support/community-guidelines`,
-  communityDeprecated: `https://bsky.social/about/support/community-guidelines-deprecated`,
+  tos: `https://bluefly.craftisanlabs.com/terms-of-service.pdf`,
+  privacy: `https://bluefly.craftisanlabs.com/privacy-policy.pdf`,
+  community: `https://bluefly.craftisanlabs.com/community-guidelines`,
+  communityDeprecated: `https://bluefly.craftisanlabs.com/community-guidelines`,
 }

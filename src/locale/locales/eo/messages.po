@@ -427,7 +427,7 @@ msgstr "{joinedAllTimeCount, plural, one {# uzanto}other {# uzantoj}} aliĝis!"
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, one {# minuto} other {# minutoj}}"
 
-#: src/view/shell/bottom-bar/BottomBarWeb.tsx:277
+#: src/view/shell/bottom-bar/BottomBarWeb.tsx:282
 msgid "{notificationCount, plural, one {# unread item} other {# unread items}}"
 msgstr "{notificationCount, plural, one {# nelegita elemento} other {# nelegitaj elementoj}}"
 
@@ -531,6 +531,19 @@ msgstr "30 tagoj"
 msgid "7 days"
 msgstr "7 tagoj"
 
+#: src/components/PaywallModal.tsx:236
+msgid "7-day free trial"
+msgstr ""
+
+#: src/components/PaywallModal.tsx:249
+#: src/screens/Subscription/SubscriptionScreen.tsx:171
+msgid "7-day free trial • Best value!"
+msgstr ""
+
+#: src/screens/Subscription/SubscriptionScreen.tsx:159
+msgid "7-day free trial included"
+msgstr ""
+
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:17
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
 msgstr "Aro de popularaj fluoj, kiujn vi povas trovi ĉe Bluesky, inkluzive de News, Booksky, Game Dev, Blacksky kaj Fountain Pens"
@@ -557,8 +570,8 @@ msgstr "Ekrankopio montranta afiŝon kun nova butono, apud la konigi-butono, kiu
 msgid "A screenshot of a profile page with a bell icon next to the follow button, indicating the new activity notifications feature."
 msgstr "Ekrankopio montranta paĝon kun sonorila piktogramo apud la sekvi-butono, kiu estas la nova funkcio \"agadaj sciigoj\"."
 
-#: src/Navigation.tsx:524
-#: src/screens/Settings/AboutSettings.tsx:75
+#: src/Navigation.tsx:526
+#: src/screens/Settings/AboutSettings.tsx:73
 #: src/screens/Settings/Settings.tsx:244
 #: src/screens/Settings/Settings.tsx:247
 msgid "About"
@@ -592,11 +605,11 @@ msgstr "Akcepti tiun sugeston de lingvo"
 msgid "Accessibility"
 msgstr "Alirebleco"
 
-#: src/Navigation.tsx:383
+#: src/Navigation.tsx:385
 msgid "Accessibility Settings"
 msgstr "Alireblecaj agordoj"
 
-#: src/Navigation.tsx:399
+#: src/Navigation.tsx:401
 #: src/screens/Login/LoginForm.tsx:194
 #: src/screens/Settings/AccountSettings.tsx:51
 #: src/screens/Settings/Settings.tsx:174
@@ -631,7 +644,7 @@ msgstr "Konto silentigita"
 msgid "Account Muted by List"
 msgstr "Konto silentigita de listo"
 
-#: src/screens/Settings/Settings.tsx:626
+#: src/screens/Settings/Settings.tsx:633
 msgid "Account options"
 msgstr "Kontaj opcioj"
 
@@ -639,7 +652,7 @@ msgstr "Kontaj opcioj"
 msgid "Account provider"
 msgstr ""
 
-#: src/screens/Settings/Settings.tsx:662
+#: src/screens/Settings/Settings.tsx:669
 msgid "Account removed from quick access"
 msgstr "Konto forigita el la rapidatingo"
 
@@ -665,15 +678,24 @@ msgstr "Konto malsilentigita"
 msgid "Accounts with a scalloped blue check mark <0><1/></0> can verify others. These trusted verifiers are selected by Bluesky."
 msgstr "Kontoj kun gravurita blua kontrolmarko<0><1/></0>povas kontroli aliulojn. Tiuj fidataj konfirmantoj estas elektataj de Bluesky."
 
+#: src/screens/Subscription/SubscriptionScreen.tsx:95
+msgid "Active Subscription"
+msgstr ""
+
 #: src/lib/hooks/useNotificationHandler.ts:182
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:102
 #: src/screens/Settings/NotificationSettings/index.tsx:192
 msgid "Activity from others"
 msgstr "Agado de aliuloj"
 
-#: src/Navigation.tsx:492
+#: src/Navigation.tsx:494
 msgid "Activity notifications"
 msgstr "Agadaj sciigoj"
+
+#: src/components/PaywallModal.tsx:207
+#: src/screens/Subscription/SubscriptionScreen.tsx:118
+msgid "Ad-free browsing experience"
+msgstr ""
 
 #: src/components/dialogs/lists/ListAddRemoveUsersDialog.tsx:169
 #: src/components/dialogs/MutedWords.tsx:333
@@ -700,8 +722,8 @@ msgstr "Aldoni averton pri enhavo"
 msgid "Add a temporary live status to your profile. When someone clicks on your avatar, they’ll see information about your live event."
 msgstr "Aldoni dumtempan tujelsendan staton al via profilo. Kiam iu alklakos vian profilbildon, ties vidos informon pri via tujelsenda evento."
 
-#: src/screens/ProfileList/AboutSection.tsx:62
-#: src/screens/ProfileList/AboutSection.tsx:80
+#: src/screens/ProfileList/AboutSection.tsx:63
+#: src/screens/ProfileList/AboutSection.tsx:81
 msgid "Add a user to this list"
 msgstr "Aldoni uzanton al ĉi tiu listo"
 
@@ -724,8 +746,8 @@ msgstr "Aldoni alternativan tekston"
 msgid "Add alt text (optional)"
 msgstr "Aldoni alternativan tekston (nedeviga)"
 
-#: src/screens/Settings/Settings.tsx:566
-#: src/screens/Settings/Settings.tsx:569
+#: src/screens/Settings/Settings.tsx:573
+#: src/screens/Settings/Settings.tsx:576
 #: src/view/shell/desktop/LeftNav.tsx:262
 #: src/view/shell/desktop/LeftNav.tsx:266
 msgid "Add another account"
@@ -743,8 +765,8 @@ msgstr "Aldoni plian afiŝon al fadeno"
 msgid "Add app password"
 msgstr "Aldoni apan pasvorton"
 
-#: src/screens/Settings/AppPasswords.tsx:73
-#: src/screens/Settings/AppPasswords.tsx:81
+#: src/screens/Settings/AppPasswords.tsx:74
+#: src/screens/Settings/AppPasswords.tsx:82
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:111
 msgid "Add App Password"
 msgstr "Aldoni apan pasvorton"
@@ -771,8 +793,8 @@ msgstr "Aldoni silentigitan vorton kun elektitaj agordoj"
 msgid "Add muted words and tags"
 msgstr "Aldoni silentigitajn vortojn kaj kradvortojn"
 
-#: src/screens/ProfileList/AboutSection.tsx:70
-#: src/screens/ProfileList/AboutSection.tsx:88
+#: src/screens/ProfileList/AboutSection.tsx:71
+#: src/screens/ProfileList/AboutSection.tsx:89
 msgid "Add people"
 msgstr "Aldoni homojn"
 
@@ -963,7 +985,7 @@ msgstr ""
 msgid "Allow your followers to reply"
 msgstr ""
 
-#: src/screens/Settings/AppPasswords.tsx:199
+#: src/screens/Settings/AppPasswords.tsx:200
 msgid "Allows access to direct messages"
 msgstr "Permesas aliron al rektaj mesaĝoj"
 
@@ -1001,7 +1023,7 @@ msgstr "Alternativa teksto"
 msgid "Alt Text"
 msgstr "Alternativa teksto"
 
-#: src/view/com/composer/photos/Gallery.tsx:260
+#: src/view/com/composer/photos/Gallery.tsx:261
 msgid "Alt text describes images for blind and low-vision users, and helps give context to everyone."
 msgstr "Alternativa teksto priskribas bildojn por blindaj kaj vide handikapitaj uzantoj, kaj helpas doni kuntekston por ĉiuj."
 
@@ -1036,7 +1058,7 @@ msgstr "Eraro okazis dum ŝargado de proponitaj kontoj."
 msgid "An error occurred while fetching the feed."
 msgstr "Eraro okazis dum ŝargado de la fluo."
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:339
+#: src/components/StarterPack/ProfileStarterPacks.tsx:371
 msgid "An error occurred while generating your starter pack. Want to try again?"
 msgstr "Eraro okazis dum generado de via startpako. Ĉu vi volas reprovi?"
 
@@ -1150,7 +1172,7 @@ msgstr "Iu ajn povas interagi"
 msgid "Anyone who follows me"
 msgstr "Ĉiu kiu sekvas min"
 
-#: src/Navigation.tsx:532
+#: src/Navigation.tsx:534
 #: src/screens/Settings/AppIconSettings/index.tsx:67
 #: src/screens/Settings/AppIconSettings/SettingsListItem.tsx:18
 #: src/screens/Settings/AppIconSettings/SettingsListItem.tsx:23
@@ -1165,7 +1187,7 @@ msgstr "Apa lingvo"
 msgid "App Password"
 msgstr "Apa pasvorto"
 
-#: src/screens/Settings/AppPasswords.tsx:145
+#: src/screens/Settings/AppPasswords.tsx:146
 msgctxt "toast"
 msgid "App password deleted"
 msgstr "Apa pasvorto forigita"
@@ -1187,8 +1209,8 @@ msgstr "Nomoj de apaj pasvortoj devas havi longon de almenaŭ 4 signoj"
 msgid "App passwords"
 msgstr "Apaj pasvortoj"
 
-#: src/Navigation.tsx:351
-#: src/screens/Settings/AppPasswords.tsx:49
+#: src/Navigation.tsx:353
+#: src/screens/Settings/AppPasswords.tsx:50
 msgid "App Passwords"
 msgstr "Apaj pasvortoj"
 
@@ -1223,7 +1245,7 @@ msgstr "Apelacii pri suspendo"
 msgid "Appeal this decision"
 msgstr "Apelacii pri ĉi tiu decido"
 
-#: src/Navigation.tsx:391
+#: src/Navigation.tsx:393
 #: src/screens/Settings/AppearanceSettings.tsx:73
 #: src/screens/Settings/Settings.tsx:212
 #: src/screens/Settings/Settings.tsx:215
@@ -1235,8 +1257,8 @@ msgstr "Aspekto"
 msgid "Apply default recommended feeds"
 msgstr "Apliki defaŭltajn rekomenditajn fluojn"
 
-#: src/screens/Settings/Settings.tsx:498
-#: src/screens/Settings/Settings.tsx:500
+#: src/screens/Settings/Settings.tsx:505
+#: src/screens/Settings/Settings.tsx:507
 msgid "Apply Pull Request"
 msgstr "Apliki tirpeton"
 
@@ -1249,7 +1271,7 @@ msgstr "Arkivigita de {0}"
 msgid "Archived post"
 msgstr "Arkivigita afiŝo"
 
-#: src/screens/Settings/AppPasswords.tsx:208
+#: src/screens/Settings/AppPasswords.tsx:209
 msgid "Are you sure you want to delete the app password \"{0}\"?"
 msgstr "Ĉu vi certas, ke vi volas forigi la apan pasvorton \"{0}\"?"
 
@@ -1316,6 +1338,10 @@ msgstr "Asigni temon por algoritmo"
 msgid "At least 8 characters"
 msgstr "Almenaŭ 8 signoj"
 
+#: src/screens/Takendown.tsx:226
+msgid "AT Protocol Terms of Service"
+msgstr ""
+
 #: src/screens/Settings/AppIconSettings/useAppIconSets.ts:48
 msgctxt "Name of app icon variant"
 msgid "Aurora"
@@ -1373,8 +1399,9 @@ msgid "Before creating a post or replying, you must first verify your email."
 msgstr "Antaŭ ol krei afiŝon aŭ respondi, vi devas unue konfirmi vian retpoŝtadreson."
 
 #: src/components/dialogs/StarterPackDialog.tsx:71
-#: src/components/StarterPack/ProfileStarterPacks.tsx:231
-#: src/components/StarterPack/ProfileStarterPacks.tsx:241
+#: src/components/StarterPack/ProfileStarterPacks.tsx:263
+#: src/components/StarterPack/ProfileStarterPacks.tsx:273
+#: src/view/screens/Profile.tsx:351
 msgid "Before creating a starter pack, you must first verify your email."
 msgstr "Antaŭ ol krei startpakon, vi devas unue konfirmi vian retpoŝtadreson."
 
@@ -1404,6 +1431,11 @@ msgstr "Komencu procezon de garantio pri aĝo"
 #: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:51
 msgid "Begin the age assurance process by completing the fields below."
 msgstr "Komencu procezon de garantio pri aĝo kompletigante la kampojn sube."
+
+#: src/components/PaywallModal.tsx:360
+#: src/screens/Subscription/SubscriptionScreen.tsx:283
+msgid "BEST VALUE"
+msgstr ""
 
 #: src/components/dialogs/BirthDateSettings.tsx:115
 #: src/screens/Settings/AccountSettings.tsx:142
@@ -1474,7 +1506,7 @@ msgstr "Blokita"
 msgid "Blocked accounts"
 msgstr "Blokitaj kontoj"
 
-#: src/Navigation.tsx:192
+#: src/Navigation.tsx:194
 #: src/view/screens/ModerationBlockedAccounts.tsx:104
 msgid "Blocked Accounts"
 msgstr "Blokitaj kontoj"
@@ -1504,6 +1536,12 @@ msgstr "Barado ne malebligos al oni meti etikedojn sur vian konton, sed maleblig
 msgid "Blog"
 msgstr "Blogo"
 
+#: src/components/PaywallModal.tsx:168
+#: src/screens/Settings/Settings.tsx:254
+#: src/screens/Subscription/SubscriptionScreen.tsx:70
+msgid "BlueFly Premium"
+msgstr ""
+
 #: src/components/dialogs/ServerInput.tsx:147
 #: src/components/dialogs/ServerInput.tsx:149
 msgid "Bluesky"
@@ -1531,11 +1569,7 @@ msgstr "Bluesky estas malfermita reto, kie elekteblas provizanto de gastigo. Se 
 msgid "Bluesky is better with friends!"
 msgstr "Bluesky pli bonas kun amikoj!"
 
-#: src/screens/Takendown.tsx:226
-msgid "Bluesky Social Terms of Service"
-msgstr "Uzokondiĉoj de Bluesky Social"
-
-#: src/components/StarterPack/ProfileStarterPacks.tsx:306
+#: src/components/StarterPack/ProfileStarterPacks.tsx:338
 msgid "Bluesky will choose a set of recommended accounts from people in your network."
 msgstr "Bluesky elektos aron de rekomenditaj kontoj de homoj en via reto."
 
@@ -1570,6 +1604,11 @@ msgstr "Libroj"
 
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:215
 msgid "Breaking site rules"
+msgstr ""
+
+#: src/view/com/feeds/ProfileFeedgens.tsx:158
+#: src/view/com/feeds/ProfileFeedgens.tsx:159
+msgid "Browse custom feeds"
 msgstr ""
 
 #: src/components/FeedInterstitials.tsx:436
@@ -1617,6 +1656,10 @@ msgstr "Foliumi temon {displayName}"
 #: src/view/com/auth/SplashScreen.web.tsx:174
 msgid "Business"
 msgstr "Komerco"
+
+#: src/screens/Bookmarks/index.tsx:277
+msgid "Button to go back to the home timeline"
+msgstr ""
 
 #: src/components/LabelingServiceCard/index.tsx:62
 #: src/components/moderation/ReportDialog/index.tsx:834
@@ -1685,7 +1728,7 @@ msgstr "Fotilo"
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:85
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:247
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:253
-#: src/screens/Settings/Settings.tsx:289
+#: src/screens/Settings/Settings.tsx:296
 #: src/screens/Takendown.tsx:108
 #: src/screens/Takendown.tsx:111
 #: src/view/com/composer/Composer.tsx:1048
@@ -1796,7 +1839,7 @@ msgid "Changes saved"
 msgstr "Ŝanĝoj konservitaj"
 
 #: src/lib/hooks/useNotificationHandler.ts:99
-#: src/Navigation.tsx:549
+#: src/Navigation.tsx:551
 #: src/view/shell/bottom-bar/BottomBar.tsx:221
 #: src/view/shell/desktop/LeftNav.tsx:608
 #: src/view/shell/Drawer.tsx:466
@@ -1822,7 +1865,7 @@ msgctxt "toast"
 msgid "Chat muted"
 msgstr "Babilejo silentigita"
 
-#: src/Navigation.tsx:559
+#: src/Navigation.tsx:561
 #: src/screens/Messages/components/InboxPreview.tsx:22
 msgid "Chat request inbox"
 msgstr "Ricevujo de babilpetoj"
@@ -1834,7 +1877,7 @@ msgid "Chat requests"
 msgstr "Babilpetoj"
 
 #: src/components/dms/ConvoMenu.tsx:78
-#: src/Navigation.tsx:554
+#: src/Navigation.tsx:556
 #: src/screens/Messages/ChatList.tsx:81
 #: src/screens/Messages/ChatList.tsx:85
 #: src/screens/Messages/ChatList.tsx:380
@@ -1885,7 +1928,7 @@ msgstr "Elektu metodon por konfirmi vian domajnon"
 msgid "Choose Feeds"
 msgstr "Elektu fluojn"
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:314
+#: src/components/StarterPack/ProfileStarterPacks.tsx:346
 msgid "Choose for me"
 msgstr "Elektu por mi"
 
@@ -1917,20 +1960,24 @@ msgstr "Elektu vian propran novaĵfluon! Fluoj konstruitaj de la komunumo helpas
 msgid "Choose your password"
 msgstr "Elektu vian pasvorton"
 
+#: src/screens/Subscription/SubscriptionScreen.tsx:150
+msgid "Choose Your Plan"
+msgstr ""
+
 #: src/screens/Signup/index.tsx:181
 msgid "Choose your username"
 msgstr "Elektu vian uzantnomon"
 
-#: src/screens/Settings/Settings.tsx:490
+#: src/screens/Settings/Settings.tsx:497
 msgid "Clear all storage data"
 msgstr "Forigi ĉiujn konservitajn datumojn"
 
-#: src/screens/Settings/Settings.tsx:492
+#: src/screens/Settings/Settings.tsx:499
 msgid "Clear all storage data (restart after this)"
 msgstr "Forigi ĉiujn konservitajn datumojn (restartigu poste)"
 
-#: src/screens/Settings/AboutSettings.tsx:116
-#: src/screens/Settings/AboutSettings.tsx:120
+#: src/screens/Settings/AboutSettings.tsx:114
+#: src/screens/Settings/AboutSettings.tsx:118
 msgid "Clear image cache"
 msgstr "Viŝi bildan kaŝmemoron"
 
@@ -1992,6 +2039,7 @@ msgstr "🐮 Dek bovinoj 🐮"
 #: src/components/live/EditLiveDialog.tsx:235
 #: src/components/NewskieDialog.tsx:167
 #: src/components/NewskieDialog.tsx:173
+#: src/components/PaywallModal.tsx:159
 #: src/components/Post/Embed/ExternalEmbed/Gif.tsx:197
 #: src/components/ProgressGuide/FollowDialog.tsx:376
 #: src/components/StarterPack/Wizard/WizardEditListDialog.tsx:118
@@ -2059,6 +2107,10 @@ msgstr "Fermi bildmontrilon"
 msgid "Close menu"
 msgstr "Fermi menuon"
 
+#: src/components/PaywallModal.tsx:160
+msgid "Close the subscription popup"
+msgstr ""
+
 #: src/components/Menu/index.tsx:344
 msgid "Close this dialog"
 msgstr "Fermi ĉi tiun dialogujon"
@@ -2112,7 +2164,7 @@ msgid "Comics"
 msgstr "Komiksoj"
 
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:45
-#: src/Navigation.tsx:341
+#: src/Navigation.tsx:343
 #: src/view/screens/CommunityGuidelines.tsx:37
 msgid "Community Guidelines"
 msgstr "Komunumaj gvidnormoj"
@@ -2228,7 +2280,7 @@ msgstr "Enhavo kaj aŭdvidaĵoj"
 msgid "Content and media"
 msgstr "Enhavo kaj aŭdvidaĵoj"
 
-#: src/Navigation.tsx:508
+#: src/Navigation.tsx:510
 msgid "Content and Media"
 msgstr "Enhavo kaj aŭdvidaĵoj"
 
@@ -2320,7 +2372,7 @@ msgstr "Konversacio forigita"
 msgid "Cooking"
 msgstr "Kuirado"
 
-#: src/screens/Settings/AboutSettings.tsx:151
+#: src/screens/Settings/AboutSettings.tsx:149
 msgid "Copied build version to clipboard"
 msgstr "Versio kopiita al tondujo"
 
@@ -2338,7 +2390,7 @@ msgstr "Kopiita al tondujo"
 msgid "Copied!"
 msgstr "Kopiita!"
 
-#: src/screens/Settings/AboutSettings.tsx:127
+#: src/screens/Settings/AboutSettings.tsx:125
 msgid "Copies build version to clipboard"
 msgstr "Kopias version al tondujo"
 
@@ -2430,7 +2482,7 @@ msgstr "Kopii la valoron de la TXT-rikordo"
 
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:40
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:107
-#: src/Navigation.tsx:346
+#: src/Navigation.tsx:348
 #: src/view/screens/CopyrightPolicy.tsx:34
 msgid "Copyright Policy"
 msgstr "Regularo pri kopirajto"
@@ -2452,7 +2504,7 @@ msgstr "Ne eblis trovi profilon"
 msgid "Could not leave chat"
 msgstr "Ne eblis foriri el babilejo"
 
-#: src/screens/Profile/ProfileFeed/index.tsx:83
+#: src/screens/Profile/ProfileFeed/index.tsx:84
 msgid "Could not load feed"
 msgstr "Ne eblis ŝargi fluon"
 
@@ -2482,21 +2534,31 @@ msgstr "Ne eblis ĝisdatigi sciigajn agordojn"
 #. Text on button to create a new starter pack
 #: src/components/dialogs/StarterPackDialog.tsx:112
 #: src/components/dialogs/StarterPackDialog.tsx:201
-#: src/components/StarterPack/ProfileStarterPacks.tsx:296
+#: src/components/StarterPack/ProfileStarterPacks.tsx:328
 msgid "Create"
 msgstr "Krei"
+
+#: src/view/com/lists/ProfileLists.tsx:159
+#: src/view/com/lists/ProfileLists.tsx:160
+msgid "Create a list"
+msgstr ""
 
 #: src/components/StarterPack/QrCodeDialog.tsx:163
 msgid "Create a QR code for a starter pack"
 msgstr "Krei QR-kodon por startpako"
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:174
-#: src/components/StarterPack/ProfileStarterPacks.tsx:283
-#: src/Navigation.tsx:589
+#: src/components/StarterPack/ProfileStarterPacks.tsx:206
+#: src/components/StarterPack/ProfileStarterPacks.tsx:315
+#: src/Navigation.tsx:591
 msgid "Create a starter pack"
 msgstr "Krei startpakon"
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:270
+#: src/view/screens/Profile.tsx:542
+#: src/view/screens/Profile.tsx:543
+msgid "Create a Starter Pack"
+msgstr ""
+
+#: src/components/StarterPack/ProfileStarterPacks.tsx:302
 msgid "Create a starter pack for me"
 msgstr "Krei startpakon por mi"
 
@@ -2533,7 +2595,7 @@ msgstr "Krei konton neuzante ĉi tiun startpakon"
 msgid "Create an avatar instead"
 msgstr "Krei profilbildon anstataŭe"
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:181
+#: src/components/StarterPack/ProfileStarterPacks.tsx:213
 msgid "Create another"
 msgstr "Krei plian"
 
@@ -2561,7 +2623,7 @@ msgstr "Krei startpakon"
 msgid "Create user list"
 msgstr "Krei la liston de uzantoj"
 
-#: src/screens/Settings/AppPasswords.tsx:172
+#: src/screens/Settings/AppPasswords.tsx:173
 msgid "Created {0}"
 msgstr "Kreita {0}"
 
@@ -2607,7 +2669,7 @@ msgctxt "Name of app icon variant"
 msgid "Dark"
 msgstr "Malhela"
 
-#: src/view/screens/Debug.tsx:68
+#: src/view/screens/Debug.tsx:69
 msgid "Dark mode"
 msgstr "Malhela reĝimo"
 
@@ -2625,11 +2687,11 @@ msgstr "Naskiĝdato"
 msgid "Deactivate account"
 msgstr "Malaktivigi konton"
 
-#: src/screens/Settings/Settings.tsx:455
+#: src/screens/Settings/Settings.tsx:462
 msgid "Debug Moderation"
 msgstr "Sencimiga kontrolo"
 
-#: src/view/screens/Debug.tsx:88
+#: src/view/screens/Debug.tsx:89
 msgid "Debug panel"
 msgstr "Panelo de sencimigo"
 
@@ -2649,7 +2711,7 @@ msgstr "Defaŭltaj piktogramoj"
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:736
 #: src/screens/Messages/components/ChatStatusInfo.tsx:55
 #: src/screens/ProfileList/components/MoreOptionsMenu.tsx:280
-#: src/screens/Settings/AppPasswords.tsx:211
+#: src/screens/Settings/AppPasswords.tsx:212
 #: src/screens/StarterPack/StarterPackScreen.tsx:601
 #: src/screens/StarterPack/StarterPackScreen.tsx:690
 #: src/screens/StarterPack/StarterPackScreen.tsx:762
@@ -2665,11 +2727,11 @@ msgstr "Forigi konton"
 msgid "Delete Account <0>\"</0><1>{0}</1><2>\"</2>"
 msgstr "Forigi konton <0>\"</0><1>{0}</1><2>\"</2>"
 
-#: src/screens/Settings/AppPasswords.tsx:185
+#: src/screens/Settings/AppPasswords.tsx:186
 msgid "Delete app password"
 msgstr "Forigi apan pasvorton"
 
-#: src/screens/Settings/AppPasswords.tsx:206
+#: src/screens/Settings/AppPasswords.tsx:207
 msgid "Delete app password?"
 msgstr "Ĉu forigi apan pasvorton?"
 
@@ -2678,7 +2740,7 @@ msgstr "Ĉu forigi apan pasvorton?"
 msgid "Delete chat"
 msgstr "Forigi babilejon"
 
-#: src/screens/Settings/Settings.tsx:462
+#: src/screens/Settings/Settings.tsx:469
 msgid "Delete chat declaration record"
 msgstr "Forigi babilan deklaro-rikordon"
 
@@ -2773,18 +2835,18 @@ msgstr "Malligi citaĵon"
 msgid "Detach quote post?"
 msgstr "Ĉu malligi citatan afiŝon?"
 
-#: src/screens/Settings/AboutSettings.tsx:140
+#: src/screens/Settings/AboutSettings.tsx:138
 msgctxt "toast"
 msgid "Developer mode disabled"
 msgstr "Programista reĝimo malŝaltita"
 
-#: src/screens/Settings/AboutSettings.tsx:134
+#: src/screens/Settings/AboutSettings.tsx:132
 msgctxt "toast"
 msgid "Developer mode enabled"
 msgstr "Programista reĝimo ŝaltita"
 
-#: src/screens/Settings/Settings.tsx:271
-#: src/screens/Settings/Settings.tsx:274
+#: src/screens/Settings/Settings.tsx:278
+#: src/screens/Settings/Settings.tsx:281
 msgid "Developer options"
 msgstr "Programistaj opcioj"
 
@@ -3035,6 +3097,11 @@ msgstr "ekz. Neerarantaj afiŝantoj."
 msgid "e.g. Users that repeatedly reply with ads."
 msgstr "ekz. Uzantoj kiuj ripete respondas per reklamoj."
 
+#: src/components/PaywallModal.tsx:210
+#: src/screens/Subscription/SubscriptionScreen.tsx:121
+msgid "Early access to new features"
+msgstr ""
+
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:196
 msgid "Eating disorders"
 msgstr ""
@@ -3092,7 +3159,7 @@ msgstr "Redakti tujelsendan staton"
 msgid "Edit moderation list"
 msgstr "Redakti la kontrol-liston"
 
-#: src/Navigation.tsx:356
+#: src/Navigation.tsx:358
 #: src/view/screens/Feeds.tsx:518
 msgid "Edit My Feeds"
 msgstr "Redakti miajn fluojn"
@@ -3134,7 +3201,7 @@ msgstr "Redakti la liston de uzantoj"
 msgid "Edit who can reply"
 msgstr "Elekti kiu povas respondi"
 
-#: src/Navigation.tsx:594
+#: src/Navigation.tsx:596
 msgid "Edit your starter pack"
 msgstr "Redakti vian startpakon"
 
@@ -3265,7 +3332,7 @@ msgstr "Videbligi popularajn videaĵojn en via fluo Discover"
 msgid "Enabled"
 msgstr "Ŝaltita"
 
-#: src/screens/Profile/Sections/Feed.tsx:109
+#: src/screens/Profile/Sections/Feed.tsx:131
 msgid "End of feed"
 msgstr "Fino de la fluo"
 
@@ -3418,7 +3485,7 @@ msgstr "Etendi afiŝan tekston"
 msgid "Expands or collapses post text"
 msgstr "Etendas aŭ maletendas la tekston de la afiŝo"
 
-#: src/lib/api/index.ts:418
+#: src/lib/api/index.ts:426
 msgid "Expected uri to resolve to a record"
 msgstr "Espektas uri-on gvidantan al rikordo"
 
@@ -3452,7 +3519,7 @@ msgstr "Poradolta aŭ maltrankviliga aŭdvidaĵo."
 msgid "Explicit sexual images."
 msgstr "Detalaj seksumaj bildoj."
 
-#: src/Navigation.tsx:759
+#: src/Navigation.tsx:769
 #: src/screens/Search/Shell.tsx:327
 #: src/view/shell/desktop/LeftNav.tsx:690
 #: src/view/shell/Drawer.tsx:414
@@ -3488,7 +3555,7 @@ msgstr "Eksteraj aŭdvidaĵoj"
 msgid "External media may allow websites to collect information about you and your device. No information is sent or requested until you press the \"play\" button."
 msgstr "Eksteraj aŭdvidaĵoj eblas permesi al retejoj kolekti informojn pri vi kaj via aparato. Neniu informo estos sendota aŭ postulota antaŭ vi premos la butonon \"ludi\"."
 
-#: src/Navigation.tsx:375
+#: src/Navigation.tsx:377
 #: src/screens/Settings/ExternalMediaPreferences.tsx:34
 msgid "External Media Preferences"
 msgstr "Preferoj pri eksteraj aŭdvidaĵoj"
@@ -3705,7 +3772,7 @@ msgstr ""
 msgid "False information about elections"
 msgstr ""
 
-#: src/Navigation.tsx:291
+#: src/Navigation.tsx:293
 msgid "Feed"
 msgstr "Fluo"
 
@@ -3746,12 +3813,12 @@ msgctxt "toast"
 msgid "Feedback sent to feed operator"
 msgstr "Prikomentado sendita al operatoro de la fluo"
 
-#: src/Navigation.tsx:574
+#: src/Navigation.tsx:576
 #: src/screens/SavedFeeds.tsx:108
 #: src/screens/Search/SearchResults.tsx:77
 #: src/screens/StarterPack/StarterPackScreen.tsx:190
 #: src/view/screens/Feeds.tsx:511
-#: src/view/screens/Profile.tsx:230
+#: src/view/screens/Profile.tsx:239
 #: src/view/shell/desktop/LeftNav.tsx:728
 #: src/view/shell/Drawer.tsx:530
 msgid "Feeds"
@@ -3933,7 +4000,7 @@ msgstr "Sekvata de <0>{0}</0> kaj <1>{1}</1>"
 msgid "Followed by <0>{0}</0>, <1>{1}</1>, and {2, plural, one {# other} other {# others}}"
 msgstr "Sekvata de <0>{0}</0>, <1>{1}</1>, kaj {2, plural, one {# alia} other {# aliaj}}"
 
-#: src/Navigation.tsx:245
+#: src/Navigation.tsx:247
 msgid "Followers of @{0} that you know"
 msgstr "Sekvantoj de @{0}, kiujn vi konas"
 
@@ -3976,7 +4043,7 @@ msgstr "Sekvas {handle}"
 msgid "Following feed preferences"
 msgstr "Preferoj de la fluo pri sekvatoj"
 
-#: src/Navigation.tsx:362
+#: src/Navigation.tsx:364
 #: src/screens/Settings/FollowingFeedPreferences.tsx:56
 msgid "Following Feed Preferences"
 msgstr "Preferoj de la fluo pri sekvatoj"
@@ -4044,6 +4111,10 @@ msgstr "Ĉu vi forgesis pasvorton?"
 msgid "Forgot?"
 msgstr "Ĉu vi forgesis?"
 
+#: src/screens/Subscription/SubscriptionScreen.tsx:107
+msgid "Free trial active"
+msgstr ""
+
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:12
 msgid "Free your feed"
 msgstr "Liberu vian fluon"
@@ -4061,7 +4132,7 @@ msgctxt "from-feed"
 msgid "From <0/>"
 msgstr "De <0/>"
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:303
+#: src/components/StarterPack/ProfileStarterPacks.tsx:335
 msgid "Generate a starter pack"
 msgstr "Generi startpakon"
 
@@ -4152,13 +4223,15 @@ msgstr ""
 #: src/components/moderation/ScreenHider.tsx:160
 #: src/components/moderation/ScreenHider.tsx:169
 #: src/screens/Messages/Inbox.tsx:251
-#: src/screens/Profile/ProfileFeed/index.tsx:92
+#: src/screens/Profile/ProfileFeed/index.tsx:93
 #: src/screens/ProfileList/components/ErrorScreen.tsx:34
 #: src/screens/ProfileList/components/ErrorScreen.tsx:40
 #: src/screens/VideoFeed/components/Header.tsx:163
 #: src/screens/VideoFeed/index.tsx:1162
 #: src/screens/VideoFeed/index.tsx:1166
 #: src/view/com/auth/LoggedOut.tsx:72
+#: src/view/com/profile/ProfileFollowers.tsx:144
+#: src/view/com/profile/ProfileFollowers.tsx:145
 #: src/view/screens/NotFound.tsx:57
 msgid "Go back"
 msgstr "Reen"
@@ -4167,7 +4240,7 @@ msgstr "Reen"
 #: src/screens/List/ListHiddenScreen.tsx:224
 #: src/screens/Profile/ErrorState.tsx:62
 #: src/screens/Profile/ErrorState.tsx:66
-#: src/screens/Profile/ProfileFeed/index.tsx:97
+#: src/screens/Profile/ProfileFeed/index.tsx:98
 #: src/screens/StarterPack/StarterPackScreen.tsx:775
 #: src/view/screens/NotFound.tsx:56
 msgid "Go Back"
@@ -4185,6 +4258,7 @@ msgctxt "Button to go back to the home timeline"
 msgid "Go home"
 msgstr "Hejmen"
 
+#: src/screens/Bookmarks/index.tsx:278
 #: src/view/screens/NotFound.tsx:57
 msgid "Go home"
 msgstr "Hejmen"
@@ -4300,7 +4374,7 @@ msgstr ""
 msgid "Harming or endangering minors"
 msgstr ""
 
-#: src/Navigation.tsx:539
+#: src/Navigation.tsx:541
 msgid "Hashtag"
 msgstr "Kradvorto"
 
@@ -4438,23 +4512,23 @@ msgstr "Kaŝi konfirmajn ŝildojn"
 msgid "Hides the content"
 msgstr "Kaŝas la enhavon"
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:121
+#: src/view/com/posts/PostFeedErrorMessage.tsx:124
 msgid "Hmm, some kind of issue occurred when contacting the feed server. Please let the feed owner know about this issue."
 msgstr "Hmm, ia problemo okazis dum kontakto kun la servilo de la fluo. Bonvolu sciigi posedanton de la fluo pri tiu problemo."
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:109
+#: src/view/com/posts/PostFeedErrorMessage.tsx:112
 msgid "Hmm, the feed server appears to be misconfigured. Please let the feed owner know about this issue."
 msgstr "Hmm, la servilo de fluoj ŝajne estis misagordita. Bonvolu sciigi la posedanton de la fluo pri tiu problemo."
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:115
+#: src/view/com/posts/PostFeedErrorMessage.tsx:118
 msgid "Hmm, the feed server appears to be offline. Please let the feed owner know about this issue."
 msgstr "Hmm, la servilo de la fluo ŝajnas esti eksterreta. Bonvolu sciigi posedanton de la fluo pri ĉi tiu problemo."
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:112
+#: src/view/com/posts/PostFeedErrorMessage.tsx:115
 msgid "Hmm, the feed server gave a bad response. Please let the feed owner know about this issue."
 msgstr "Hmm, la servilo de la fluo misrespondis. Bonvolu sciigi posedanton de la fluo pri ĉi tiu problemo."
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:106
+#: src/view/com/posts/PostFeedErrorMessage.tsx:109
 msgid "Hmm, we're having trouble finding this feed. It may have been deleted."
 msgstr "Hmm, ni ne sukcesas trovi ĉi tiun fluon. Eble ĝi estis forigita."
 
@@ -4470,8 +4544,8 @@ msgstr "Hmmmm, ni ne povis ŝargi tiun kontrol-servon."
 msgid "Hold up! We’re gradually giving access to video, and you’re still waiting in line. Check back soon!"
 msgstr "Momenton! Ni iom post iom donas aliron al la videaĵo, kaj vi ankoraŭ atendas en vico. Rekontrolu baldaŭ!"
 
-#: src/Navigation.tsx:754
-#: src/Navigation.tsx:774
+#: src/Navigation.tsx:764
+#: src/Navigation.tsx:784
 #: src/view/shell/bottom-bar/BottomBar.tsx:178
 #: src/view/shell/desktop/LeftNav.tsx:672
 #: src/view/shell/Drawer.tsx:440
@@ -4564,12 +4638,12 @@ msgstr "Se vi provas ŝanĝi vian identigilon aŭ retpoŝtadreson, faru tion ant
 msgid "Image"
 msgstr "Bildo"
 
-#: src/screens/Settings/AboutSettings.tsx:64
+#: src/screens/Settings/AboutSettings.tsx:62
 msgid "Image cache cleared"
 msgstr "Bilda kaŝmemoro viŝita"
 
 #. Android-only toast message which includes amount of space freed using localized number formatting
-#: src/screens/Settings/AboutSettings.tsx:50
+#: src/screens/Settings/AboutSettings.tsx:48
 msgid "Image cache cleared, freed {0}"
 msgstr "Bilda kaŝmemoro viŝita, {0} liberita(j)"
 
@@ -4768,7 +4842,7 @@ msgid "Labeled by the author."
 msgstr "Etikedita de la aŭtoro."
 
 #: src/view/com/composer/labels/LabelsBtn.tsx:69
-#: src/view/screens/Profile.tsx:223
+#: src/view/screens/Profile.tsx:232
 msgid "Labels"
 msgstr "Etikedoj"
 
@@ -4788,7 +4862,7 @@ msgstr "Etikedoj sur via konto"
 msgid "Labels on your content"
 msgstr "Etikedoj sur via enhavo"
 
-#: src/Navigation.tsx:218
+#: src/Navigation.tsx:220
 msgid "Language Settings"
 msgstr "Lingvaj agordoj"
 
@@ -4910,7 +4984,7 @@ msgstr "Elirante el Bluesky"
 msgid "left to go."
 msgstr "restas."
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:319
+#: src/components/StarterPack/ProfileStarterPacks.tsx:351
 msgid "Let me choose"
 msgstr "Lasu min elekti"
 
@@ -4953,7 +5027,7 @@ msgstr "Ŝatu 10 afiŝojn"
 msgid "Like 10 posts to train the Discover feed"
 msgstr "Ŝatu 10 afiŝojn por trejni la fluon Discover"
 
-#: src/Navigation.tsx:452
+#: src/Navigation.tsx:454
 msgid "Like notifications"
 msgstr "Sciigoj pri ŝatoj"
 
@@ -4965,8 +5039,8 @@ msgstr "Ŝati ĉi tiun fluon"
 msgid "Like this labeler"
 msgstr "Ŝati ĉi tiun etikedilon"
 
-#: src/Navigation.tsx:296
-#: src/Navigation.tsx:301
+#: src/Navigation.tsx:298
+#: src/Navigation.tsx:303
 msgid "Liked by"
 msgstr "Ŝatata de"
 
@@ -4991,7 +5065,7 @@ msgstr "Ŝatata de {likeCount, plural, one {# uzanto} other {# uzantoj}}"
 #: src/lib/hooks/useNotificationHandler.ts:126
 #: src/screens/Settings/NotificationSettings/index.tsx:126
 #: src/screens/Settings/NotificationSettings/LikeNotificationSettings.tsx:41
-#: src/view/screens/Profile.tsx:229
+#: src/view/screens/Profile.tsx:238
 msgid "Likes"
 msgstr "Ŝatoj"
 
@@ -5001,7 +5075,7 @@ msgstr "Ŝatoj"
 msgid "Likes of your reposts"
 msgstr "Ŝatoj de viaj reafiŝoj"
 
-#: src/Navigation.tsx:476
+#: src/Navigation.tsx:478
 msgid "Likes of your reposts notifications"
 msgstr "Sciigoj pri ŝatoj de viaj reafiŝoj"
 
@@ -5014,7 +5088,7 @@ msgstr "Ŝatoj de ĉi tiu afiŝo"
 msgid "Linear"
 msgstr "Linie"
 
-#: src/Navigation.tsx:251
+#: src/Navigation.tsx:253
 msgid "List"
 msgstr "Listo"
 
@@ -5094,14 +5168,19 @@ msgctxt "toast"
 msgid "List unmuted"
 msgstr "Listo malsilentigita"
 
-#: src/Navigation.tsx:172
+#: src/Navigation.tsx:174
 #: src/view/screens/Lists.tsx:67
-#: src/view/screens/Profile.tsx:224
-#: src/view/screens/Profile.tsx:232
+#: src/view/screens/Profile.tsx:233
+#: src/view/screens/Profile.tsx:241
 #: src/view/shell/desktop/LeftNav.tsx:746
 #: src/view/shell/Drawer.tsx:545
 msgid "Lists"
 msgstr "Listoj"
+
+#: src/view/com/lists/MyLists.tsx:72
+#: src/view/com/lists/ProfileLists.tsx:155
+msgid "Lists allow you to see content from your favorite people."
+msgstr ""
 
 #: src/components/dms/BlockedByListDialog.tsx:39
 msgid "Lists blocking this user:"
@@ -5136,9 +5215,9 @@ msgstr "Ŝargi pliajn proponitajn fluojn"
 msgid "Load new notifications"
 msgstr "Ŝargi novajn sciigojn"
 
-#: src/screens/Profile/ProfileFeed/index.tsx:224
-#: src/screens/Profile/Sections/Feed.tsx:94
-#: src/screens/ProfileList/FeedSection.tsx:105
+#: src/screens/Profile/ProfileFeed/index.tsx:231
+#: src/screens/Profile/Sections/Feed.tsx:116
+#: src/screens/ProfileList/FeedSection.tsx:112
 #: src/view/com/feeds/FeedPage.tsx:169
 msgid "Load new posts"
 msgstr "Ŝargi novajn afiŝojn"
@@ -5151,11 +5230,12 @@ msgstr ""
 msgid "Loading post interaction settings..."
 msgstr ""
 
+#: src/screens/Subscription/SubscriptionScreen.tsx:129
 #: src/view/com/composer/text-input/mobile/Autocomplete.tsx:61
 msgid "Loading..."
 msgstr "Ŝargado..."
 
-#: src/Navigation.tsx:321
+#: src/Navigation.tsx:323
 msgid "Log"
 msgstr "Protokolo"
 
@@ -5200,7 +5280,7 @@ msgstr "Fluo de sekvatoj ŝajne mankas al vi. <0>Alklaku por aldoni iun.</0>"
 msgid "Make adjustments to email settings for your account"
 msgstr "Faru ĝustigojn al retpoŝtaj agordoj por via konto"
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:278
+#: src/components/StarterPack/ProfileStarterPacks.tsx:310
 msgid "Make one for me"
 msgstr "Faru ĝin por mi"
 
@@ -5242,7 +5322,7 @@ msgstr "Markis ĉiujn kiel legitaj"
 msgid "Maybe later"
 msgstr "Eble poste"
 
-#: src/view/screens/Profile.tsx:227
+#: src/view/screens/Profile.tsx:236
 msgid "Media"
 msgstr "Aŭdvidaĵoj"
 
@@ -5250,7 +5330,7 @@ msgstr "Aŭdvidaĵoj"
 msgid "Media that may be disturbing or inappropriate for some audiences."
 msgstr "Aŭdvidaĵoj, kiuj povas esti maltrankviligaj aŭ nekonvenaj por kelkaj spektantoj."
 
-#: src/Navigation.tsx:436
+#: src/Navigation.tsx:438
 msgid "Mention notifications"
 msgstr "Sciigoj pri mencioj"
 
@@ -5286,7 +5366,7 @@ msgstr "Mesaĝo forigita"
 msgid "Message from @{0}: {1}"
 msgstr "Mesaĝo de @{0}: {1}"
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:205
+#: src/view/com/posts/PostFeedErrorMessage.tsx:208
 msgid "Message from server: {0}"
 msgstr "Mesaĝo de la servilo: {0}"
 
@@ -5303,7 +5383,7 @@ msgstr "Mesaĝo tro longas"
 msgid "Message options"
 msgstr "Opcioj de mesaĝo"
 
-#: src/Navigation.tsx:769
+#: src/Navigation.tsx:779
 msgid "Messages"
 msgstr "Mesaĝoj"
 
@@ -5316,7 +5396,7 @@ msgstr "Noktomezo"
 msgid "Minor harassment or bullying"
 msgstr ""
 
-#: src/Navigation.tsx:500
+#: src/Navigation.tsx:502
 msgid "Miscellaneous notifications"
 msgstr "Sciigoj aliaj"
 
@@ -5324,7 +5404,7 @@ msgstr "Sciigoj aliaj"
 msgid "Misleading"
 msgstr ""
 
-#: src/Navigation.tsx:177
+#: src/Navigation.tsx:179
 #: src/screens/Moderation/index.tsx:100
 #: src/screens/Settings/Settings.tsx:188
 #: src/screens/Settings/Settings.tsx:191
@@ -5363,7 +5443,7 @@ msgstr "Kontrol-listo ĝisdatigita"
 msgid "Moderation lists"
 msgstr "Kontrol-listoj"
 
-#: src/Navigation.tsx:182
+#: src/Navigation.tsx:184
 #: src/view/screens/ModerationModlists.tsx:67
 msgid "Moderation Lists"
 msgstr "Kontrol-listoj"
@@ -5372,7 +5452,7 @@ msgstr "Kontrol-listoj"
 msgid "moderation settings"
 msgstr "agordoj pri kontrolado"
 
-#: src/Navigation.tsx:311
+#: src/Navigation.tsx:313
 msgid "Moderation states"
 msgstr "Statoj de kontrolado"
 
@@ -5384,6 +5464,15 @@ msgstr "Kontroladaj iloj"
 #: src/lib/moderation/useModerationCauseDescription.ts:48
 msgid "Moderator has chosen to set a general warning on the content."
 msgstr "Kontrolanto decidis starigi ĝeneralan averton pri la enhavo."
+
+#: src/components/PaywallModal.tsx:233
+#: src/screens/Subscription/SubscriptionScreen.tsx:156
+msgid "Monthly"
+msgstr ""
+
+#: src/screens/Subscription/SubscriptionScreen.tsx:100
+msgid "Monthly Plan"
+msgstr ""
 
 #: src/view/shell/desktop/Feeds.tsx:113
 #: src/view/shell/desktop/Feeds.tsx:123
@@ -5495,7 +5584,7 @@ msgstr "Silentigi vortojn kaj kradvortojn"
 msgid "Muted accounts"
 msgstr "Silentigitaj kontoj"
 
-#: src/Navigation.tsx:187
+#: src/Navigation.tsx:189
 #: src/view/screens/ModerationMutedAccounts.tsx:116
 msgid "Muted Accounts"
 msgstr "Silentigitaj kontoj"
@@ -5599,7 +5688,7 @@ msgstr "Nova retpoŝtadreso"
 msgid "New Feature"
 msgstr "Nova funkcio"
 
-#: src/Navigation.tsx:468
+#: src/Navigation.tsx:470
 msgid "New follower notifications"
 msgstr "Sciigoj pri novaj sekvantoj"
 
@@ -5630,12 +5719,12 @@ msgstr "Novaj mesaĝoj"
 msgid "New password"
 msgstr "Nova pasvorto"
 
-#: src/screens/Profile/ProfileFeed/index.tsx:241
+#: src/screens/Profile/ProfileFeed/index.tsx:248
 #: src/screens/ProfileList/index.tsx:246
 #: src/screens/ProfileList/index.tsx:284
 #: src/view/screens/Feeds.tsx:552
 #: src/view/screens/Notifications.tsx:167
-#: src/view/screens/Profile.tsx:510
+#: src/view/screens/Profile.tsx:571
 msgid "New post"
 msgstr "Nova afiŝo"
 
@@ -5704,7 +5793,7 @@ msgstr "Sekva bildo"
 msgid "No ads, no invasive tracking, no engagement traps. Bluesky respects your time and attention."
 msgstr "Sen reklamoj, sen enpenetra spurado, sen okupo-kaptiloj. Bluesky respektas vian tempon kaj atenton."
 
-#: src/screens/Settings/AppPasswords.tsx:106
+#: src/screens/Settings/AppPasswords.tsx:107
 msgid "No app passwords yet"
 msgstr "Ankoraŭ ne estas apaj pasvortoj"
 
@@ -5725,12 +5814,17 @@ msgstr "Neniuj elstarigitaj GIF-oj trovitaj. Eble estas problemo pri Tenor."
 msgid "No feeds found. Try searching for something else."
 msgstr "Neniu fluo trovita. Provu serĉi ion alian."
 
+#: src/view/com/profile/ProfileFollowers.tsx:135
+msgid "No followers yet"
+msgstr ""
+
 #: src/components/live/LinkPreview.tsx:63
 msgid "No image"
 msgstr "Sen bildo"
 
 #: src/components/LikedByList.tsx:84
 #: src/view/com/post-thread/PostLikedBy.tsx:84
+#: src/view/screens/Profile.tsx:511
 msgid "No likes yet"
 msgstr "Ankoraŭ ne estas ŝatoj"
 
@@ -5740,6 +5834,10 @@ msgstr "Ankoraŭ ne estas ŝatoj"
 msgid "No longer following {0}"
 msgstr "Vi ne plu sekvas {0}"
 
+#: src/view/screens/Profile.tsx:467
+msgid "No media yet"
+msgstr ""
+
 #: src/screens/Messages/components/ChatListItem.tsx:142
 msgid "No messages yet"
 msgstr "Ankoraŭ ne estas mesaĝoj"
@@ -5748,7 +5846,7 @@ msgstr "Ankoraŭ ne estas mesaĝoj"
 msgid "No more doomscrolling junk-filled algorithms. Find feeds that work for you, not against you."
 msgstr "Ne plu da eterna rulumado tra aĉaĵo-plenaj algoritmoj. Trovu fluojn kiuj funkcias por vi, ne kontraŭ vi."
 
-#: src/view/com/notifications/NotificationFeed.tsx:122
+#: src/view/com/notifications/NotificationFeed.tsx:123
 msgid "No notifications yet!"
 msgstr "Ankoraŭ ne estas sciigoj!"
 
@@ -5764,17 +5862,22 @@ msgstr "Neniu"
 msgid "No one but the author can quote this post."
 msgstr "Neniu krom la aŭtoro povas citi ĉi tiun afiŝon."
 
-#: src/screens/Notifications/ActivityList.tsx:38
+#: src/screens/Notifications/ActivityList.tsx:42
 msgid "No posts here"
 msgstr "Neniuj afiŝoj ĉi tie"
 
-#: src/screens/Profile/Sections/Feed.tsx:62
-msgid "No posts yet."
-msgstr "Ankoraŭ ne estas afiŝoj."
+#: src/screens/Profile/Sections/Feed.tsx:80
+#: src/view/screens/Profile.tsx:431
+msgid "No posts yet"
+msgstr ""
 
 #: src/view/com/post-thread/PostQuotes.tsx:105
 msgid "No quotes yet"
 msgstr "Ankoraŭ ne estas citaĵoj"
+
+#: src/view/screens/Profile.tsx:452
+msgid "No replies yet"
+msgstr ""
 
 #: src/view/com/post-thread/PostRepostedBy.tsx:90
 msgid "No reposts yet"
@@ -5794,7 +5897,8 @@ msgstr "Sen rezultoj"
 msgid "No results for \"{0}\"."
 msgstr "Sen rezultoj por \"{0}\"."
 
-#: src/components/Lists.tsx:189
+#: src/components/Lists.tsx:201
+#: src/components/Lists.tsx:216
 msgid "No results found"
 msgstr "Neniu rezulto trovita"
 
@@ -5818,6 +5922,10 @@ msgstr "Neniu serĉrezulto trovita por \"{search}\"."
 #: src/components/dialogs/EmbedConsent.tsx:111
 msgid "No thanks"
 msgstr "Ne, dankon"
+
+#: src/view/screens/Profile.tsx:489
+msgid "No video posts yet"
+msgstr ""
 
 #: src/components/dialogs/PostInteractionSettingsDialog.tsx:465
 msgid "Nobody"
@@ -5856,8 +5964,8 @@ msgstr "Neniu"
 msgid "Not followed by anyone you're following"
 msgstr "Sekvata de neniu el viaj sekvatoj"
 
-#: src/Navigation.tsx:167
-#: src/view/screens/Profile.tsx:125
+#: src/Navigation.tsx:169
+#: src/view/screens/Profile.tsx:132
 msgid "Not Found"
 msgstr "Netrovita"
 
@@ -5882,11 +5990,12 @@ msgid "Nothing here"
 msgstr "Estas nenio ĉi tie"
 
 #: src/screens/Bookmarks/components/EmptyState.tsx:35
+#: src/screens/Bookmarks/index.tsx:274
 msgid "Nothing saved yet"
 msgstr "Ankoraŭ nenio konservita"
 
-#: src/Navigation.tsx:422
-#: src/Navigation.tsx:569
+#: src/Navigation.tsx:424
+#: src/Navigation.tsx:571
 #: src/view/screens/Notifications.tsx:136
 msgid "Notification settings"
 msgstr "Sciigaj agordoj"
@@ -5899,9 +6008,9 @@ msgstr "Sciigaj sonoj"
 msgid "Notification Sounds"
 msgstr "Sciigaj sonoj"
 
-#: src/Navigation.tsx:564
-#: src/Navigation.tsx:764
-#: src/screens/Notifications/ActivityList.tsx:29
+#: src/Navigation.tsx:566
+#: src/Navigation.tsx:774
+#: src/screens/Notifications/ActivityList.tsx:30
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:90
 #: src/screens/Settings/NotificationSettings/index.tsx:92
 #: src/screens/Settings/NotificationSettings/LikeNotificationSettings.tsx:30
@@ -5974,7 +6083,7 @@ msgstr "La plej malnovaj respondoj unue"
 msgid "on<0><1/><2><3/></2></0>"
 msgstr "ĉe<0><1/><2><3/></2></0>"
 
-#: src/screens/Settings/Settings.tsx:388
+#: src/screens/Settings/Settings.tsx:395
 msgid "Onboarding reset"
 msgstr "Restarigi la lernilon"
 
@@ -6020,16 +6129,16 @@ msgstr "Nur bildaj dosieroj estas subtenataj"
 msgid "Only WebVTT (.vtt) files are supported"
 msgstr "Nur WebVTT-dosieroj (.vtt) estas subtenataj"
 
-#: src/components/Lists.tsx:94
+#: src/components/Lists.tsx:98
 msgid "Oops, something went wrong!"
 msgstr "Ups, io misfunkciis!"
 
-#: src/components/Lists.tsx:173
-#: src/components/StarterPack/ProfileStarterPacks.tsx:328
-#: src/components/StarterPack/ProfileStarterPacks.tsx:337
-#: src/screens/Settings/AppPasswords.tsx:57
+#: src/components/Lists.tsx:183
+#: src/components/StarterPack/ProfileStarterPacks.tsx:360
+#: src/components/StarterPack/ProfileStarterPacks.tsx:369
+#: src/screens/Settings/AppPasswords.tsx:58
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:106
-#: src/view/screens/Profile.tsx:125
+#: src/view/screens/Profile.tsx:132
 msgid "Oops!"
 msgstr "Ups!"
 
@@ -6076,7 +6185,7 @@ msgstr "Malfermi ligilon al {niceUrl}"
 msgid "Open message options"
 msgstr "Malfermi opciojn de mesaĝoj"
 
-#: src/screens/Settings/Settings.tsx:453
+#: src/screens/Settings/Settings.tsx:460
 msgid "Open moderation debug page"
 msgstr "Malfermi la paĝon de kontrolada sencimigo"
 
@@ -6105,12 +6214,12 @@ msgstr "Malfermi konigadan menuon"
 msgid "Open starter pack menu"
 msgstr "Malfermi menuon de startpako"
 
-#: src/screens/Settings/Settings.tsx:446
-#: src/screens/Settings/Settings.tsx:460
+#: src/screens/Settings/Settings.tsx:453
+#: src/screens/Settings/Settings.tsx:467
 msgid "Open storybook page"
 msgstr "Malfermi la historiopaĝon"
 
-#: src/screens/Settings/Settings.tsx:439
+#: src/screens/Settings/Settings.tsx:446
 msgid "Open system log"
 msgstr "Malfermi sisteman protokolon"
 
@@ -6273,7 +6382,8 @@ msgstr "Nia kontrolad-teamo ricevis vian raporton."
 msgid "Our moderators have reviewed reports and decided to disable your access to chats on Bluesky."
 msgstr "Niaj kontrolantoj ekzamenis denuncojn kaj decidis malebligi vian aliron al babilejojn ĉe Bluesky."
 
-#: src/components/Lists.tsx:190
+#: src/components/Lists.tsx:202
+#: src/components/Lists.tsx:217
 #: src/view/screens/NotFound.tsx:47
 msgid "Page not found"
 msgstr "Paĝo netrovita"
@@ -6323,11 +6433,11 @@ msgstr "Paŭzigi videaĵon"
 msgid "People"
 msgstr "Homoj"
 
-#: src/Navigation.tsx:238
+#: src/Navigation.tsx:240
 msgid "People followed by @{0}"
 msgstr "Homoj sekvataj de @{0}"
 
-#: src/Navigation.tsx:231
+#: src/Navigation.tsx:233
 msgid "People following @{0}"
 msgstr "Homoj sekvantaj @{0}"
 
@@ -6342,6 +6452,16 @@ msgstr ""
 
 #: src/components/dialogs/PostInteractionSettingsDialog.tsx:518
 msgid "People you mention"
+msgstr ""
+
+#: src/components/PaywallModal.tsx:235
+#: src/screens/Subscription/SubscriptionScreen.tsx:158
+msgid "per month"
+msgstr ""
+
+#: src/components/PaywallModal.tsx:248
+#: src/screens/Subscription/SubscriptionScreen.tsx:170
+msgid "per quarter"
 msgstr ""
 
 #: src/lib/media/save-image.ts:59
@@ -6601,6 +6721,16 @@ msgctxt "action"
 msgid "Post"
 msgstr "Afiŝi"
 
+#: src/view/screens/Profile.tsx:469
+#: src/view/screens/Profile.tsx:470
+msgid "Post a photo"
+msgstr ""
+
+#: src/view/screens/Profile.tsx:491
+#: src/view/screens/Profile.tsx:492
+msgid "Post a video"
+msgstr ""
+
 #: src/view/com/composer/Composer.tsx:1117
 msgctxt "action"
 msgid "Post All"
@@ -6610,10 +6740,10 @@ msgstr "Afiŝi ĉiujn"
 msgid "Post blocked"
 msgstr "Afiŝo blokita"
 
-#: src/Navigation.tsx:264
-#: src/Navigation.tsx:271
-#: src/Navigation.tsx:278
-#: src/Navigation.tsx:285
+#: src/Navigation.tsx:266
+#: src/Navigation.tsx:273
+#: src/Navigation.tsx:280
+#: src/Navigation.tsx:287
 msgid "Post by @{0}"
 msgstr "Afiŝo de @{0}"
 
@@ -6622,7 +6752,7 @@ msgctxt "toast"
 msgid "Post deleted"
 msgstr "Afiŝo forigita"
 
-#: src/lib/api/index.ts:186
+#: src/lib/api/index.ts:187
 msgid "Post failed to upload. Please check your Internet connection and try again."
 msgstr "Malsukcesis ŝargi afiŝon. Bonvolu kontroli vian retkonekton kaj reprovi."
 
@@ -6647,7 +6777,7 @@ msgstr "Afiŝo kaŝita de vi"
 msgid "Post interaction settings"
 msgstr "Interagaj agordoj de afiŝo"
 
-#: src/Navigation.tsx:198
+#: src/Navigation.tsx:200
 #: src/screens/ModerationInteractionSettings/index.tsx:34
 msgid "Post Interaction Settings"
 msgstr "Interagaj agordoj de afiŝo"
@@ -6681,7 +6811,7 @@ msgstr "Afiŝo depinglita"
 #: src/screens/ProfileList/index.tsx:166
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:216
 #: src/screens/StarterPack/StarterPackScreen.tsx:191
-#: src/view/screens/Profile.tsx:225
+#: src/view/screens/Profile.tsx:234
 msgid "Posts"
 msgstr "Afiŝoj"
 
@@ -6689,7 +6819,7 @@ msgstr "Afiŝoj"
 msgid "Posts can be muted based on their text, their tags, or both. We recommend avoiding common words that appear in many posts, since it can result in no posts being shown."
 msgstr "Afiŝoj povas esti silentigitaj laŭ sia teksto, siaj etikedoj, aŭ ambaŭ. Ni rekomendas eviti oftajn vortojn, kiuj aperas en multaj afiŝoj, ĉar tio povas rezultigi, ke neniu afiŝo estos montrota."
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:72
+#: src/view/com/posts/PostFeedErrorMessage.tsx:75
 msgid "Posts hidden"
 msgstr "Afiŝoj kaŝitaj"
 
@@ -6705,12 +6835,16 @@ msgstr "Eventuale misgvida ligilo"
 msgid "Potentially misleading link warning"
 msgstr "Averto pri eventuale misgvida ligilo"
 
+#: src/screens/Subscription/SubscriptionScreen.tsx:116
+msgid "Premium Features"
+msgstr ""
+
 #: src/screens/Messages/components/MessageListError.tsx:19
 msgid "Press to attempt reconnection"
 msgstr "Premu por provi rekonekti"
 
 #: src/components/Error.tsx:60
-#: src/components/Lists.tsx:99
+#: src/components/Lists.tsx:103
 #: src/screens/Messages/components/MessageListError.tsx:24
 #: src/screens/Signup/BackNextButtons.tsx:47
 msgid "Press to retry"
@@ -6728,6 +6862,11 @@ msgstr "Antaŭa bildo"
 msgid "Primary Language"
 msgstr "Ĉefa lingvo"
 
+#: src/components/PaywallModal.tsx:209
+#: src/screens/Subscription/SubscriptionScreen.tsx:120
+msgid "Priority customer support"
+msgstr ""
+
 #: src/view/shell/desktop/RightNav.tsx:113
 #: src/view/shell/desktop/RightNav.tsx:114
 msgid "Privacy"
@@ -6738,8 +6877,8 @@ msgstr "Privateco"
 msgid "Privacy and security"
 msgstr "Privateco kaj sekureco"
 
-#: src/Navigation.tsx:407
-#: src/Navigation.tsx:415
+#: src/Navigation.tsx:409
+#: src/Navigation.tsx:417
 #: src/screens/Settings/ActivityPrivacySettings.tsx:40
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:44
 msgid "Privacy and Security"
@@ -6752,9 +6891,9 @@ msgstr "Agordoj de privateco kaj sekureco"
 
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:35
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:102
-#: src/Navigation.tsx:331
-#: src/screens/Settings/AboutSettings.tsx:92
-#: src/screens/Settings/AboutSettings.tsx:95
+#: src/Navigation.tsx:333
+#: src/screens/Settings/AboutSettings.tsx:90
+#: src/screens/Settings/AboutSettings.tsx:93
 #: src/view/screens/PrivacyPolicy.tsx:34
 #: src/view/shell/Drawer.tsx:704
 #: src/view/shell/Drawer.tsx:705
@@ -6769,13 +6908,14 @@ msgstr ""
 msgid "Processing video..."
 msgstr "Pritraktado de videaĵo..."
 
-#: src/lib/api/index.ts:60
+#: src/components/PaywallModal.tsx:265
+#: src/lib/api/index.ts:61
 #: src/screens/Login/ForgotPasswordForm.tsx:149
 msgid "Processing..."
 msgstr "Pritraktado..."
 
 #: src/view/screens/DebugMod.tsx:936
-#: src/view/screens/Profile.tsx:364
+#: src/view/screens/Profile.tsx:384
 msgid "profile"
 msgstr "profilo"
 
@@ -6806,10 +6946,6 @@ msgstr "Publika"
 #: src/view/com/lists/MyLists.tsx:77
 msgid "Public, sharable lists of users to mute or block in bulk."
 msgstr "Publikaj kaj kundivideblaj listoj por bloki aŭ silentigi uzantojn amase."
-
-#: src/view/com/lists/MyLists.tsx:72
-msgid "Public, sharable lists which can be used to drive feeds."
-msgstr "Publikaj k kundivideblaj listoj, kiuj povas esti uzitaj por funkciigi fluojn."
 
 #. Accessibility label for button to publish a single post
 #: src/view/com/composer/Composer.tsx:1099
@@ -6859,7 +6995,16 @@ msgstr "QR-kodo estis elŝutita!"
 msgid "QR code saved to your camera roll!"
 msgstr "QR-kodo konservita en via bildgalerio!"
 
-#: src/Navigation.tsx:444
+#: src/components/PaywallModal.tsx:246
+#: src/screens/Subscription/SubscriptionScreen.tsx:168
+msgid "Quarterly"
+msgstr ""
+
+#: src/screens/Subscription/SubscriptionScreen.tsx:102
+msgid "Quarterly Plan"
+msgstr ""
+
+#: src/Navigation.tsx:446
 msgid "Quote notifications"
 msgstr "Sciigoj pri citaĵoj"
 
@@ -7016,10 +7161,10 @@ msgstr "Reŝargi konversaciojn"
 #: src/components/FeedCard.tsx:343
 #: src/components/StarterPack/Wizard/WizardListCard.tsx:105
 #: src/components/StarterPack/Wizard/WizardListCard.tsx:112
-#: src/screens/Bookmarks/index.tsx:255
-#: src/screens/Settings/Settings.tsx:664
+#: src/screens/Bookmarks/index.tsx:259
+#: src/screens/Settings/Settings.tsx:671
 #: src/view/com/modals/UserAddRemoveLists.tsx:235
-#: src/view/com/posts/PostFeedErrorMessage.tsx:217
+#: src/view/com/posts/PostFeedErrorMessage.tsx:220
 msgid "Remove"
 msgstr "Forigi"
 
@@ -7031,8 +7176,8 @@ msgstr "Forigi {displayName} el la startpako"
 msgid "Remove {historyItem}"
 msgstr "Forigi {historyItem}"
 
-#: src/screens/Settings/Settings.tsx:643
-#: src/screens/Settings/Settings.tsx:646
+#: src/screens/Settings/Settings.tsx:650
+#: src/screens/Settings/Settings.tsx:653
 msgid "Remove account"
 msgstr "Forigi konton"
 
@@ -7056,11 +7201,11 @@ msgstr "Forigi enkorpigaĵon"
 
 #: src/view/com/posts/FeedShutdownMsg.tsx:116
 #: src/view/com/posts/FeedShutdownMsg.tsx:120
-#: src/view/com/posts/PostFeedErrorMessage.tsx:173
+#: src/view/com/posts/PostFeedErrorMessage.tsx:176
 msgid "Remove feed"
 msgstr "Forigi fluon"
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:214
+#: src/view/com/posts/PostFeedErrorMessage.tsx:217
 msgid "Remove feed?"
 msgstr "Ĉu forigi fluon?"
 
@@ -7072,7 +7217,7 @@ msgstr "Ĉu forigi fluon?"
 msgid "Remove from my feeds"
 msgstr "Forigi el miaj fluoj"
 
-#: src/screens/Settings/Settings.tsx:656
+#: src/screens/Settings/Settings.tsx:663
 msgid "Remove from quick access?"
 msgstr "Ĉu forigi el la rapitatingo?"
 
@@ -7082,7 +7227,7 @@ msgid "Remove from saved feeds"
 msgstr "Forigi el konservitaj fluoj"
 
 #: src/components/PostControls/BookmarkButton.tsx:128
-#: src/screens/Bookmarks/index.tsx:249
+#: src/screens/Bookmarks/index.tsx:253
 msgid "Remove from saved posts"
 msgstr "Forigi el konservitaj afiŝoj"
 
@@ -7116,7 +7261,7 @@ msgstr "Forigi reafiŝon"
 msgid "Remove subtitle file"
 msgstr "Forigi subtekstan dosieron"
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:215
+#: src/view/com/posts/PostFeedErrorMessage.tsx:218
 msgid "Remove this feed from your saved feeds"
 msgstr "Forigi ĉi tiun fluon el viaj konservitaj fluoj"
 
@@ -7153,7 +7298,7 @@ msgid "Removed from saved feeds"
 msgstr "Forigite el konservitaj fluoj"
 
 #: src/components/PostControls/BookmarkButton.tsx:94
-#: src/screens/Bookmarks/index.tsx:207
+#: src/screens/Bookmarks/index.tsx:211
 msgid "Removed from saved posts"
 msgstr "Forigita el konservitaj afiŝoj"
 
@@ -7202,7 +7347,7 @@ msgstr "Respondis al vi"
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:218
 #: src/screens/Settings/NotificationSettings/index.tsx:148
 #: src/screens/Settings/NotificationSettings/ReplyNotificationSettings.tsx:41
-#: src/view/screens/Profile.tsx:226
+#: src/view/screens/Profile.tsx:235
 msgid "Replies"
 msgstr "Respondoj"
 
@@ -7234,7 +7379,7 @@ msgstr "Respondo kaŝita de la faden-aŭtoro"
 msgid "Reply Hidden by You"
 msgstr "Respondo kaŝita de vi"
 
-#: src/Navigation.tsx:428
+#: src/Navigation.tsx:430
 msgid "Reply notifications"
 msgstr "Sciigoj pri respondoj"
 
@@ -7349,7 +7494,7 @@ msgstr "Reafiŝi"
 msgid "Repost ({0, plural, one {# repost} other {# reposts}})"
 msgstr "Reafiŝi ({0, plural, one {# reafiŝo} other {# reafiŝoj}})"
 
-#: src/Navigation.tsx:460
+#: src/Navigation.tsx:462
 msgid "Repost notifications"
 msgstr "Sciigoj pri reafiŝoj"
 
@@ -7393,7 +7538,7 @@ msgstr "Reafiŝoj de ĉi tiu afiŝo"
 msgid "Reposts of your reposts"
 msgstr "Reafiŝoj de viaj reafiŝoj"
 
-#: src/Navigation.tsx:484
+#: src/Navigation.tsx:486
 msgid "Reposts of your reposts notifications"
 msgstr "Sciigoj pri reafiŝoj de viaj reafiŝoj"
 
@@ -7436,8 +7581,8 @@ msgstr "Resendi retmesaĝon"
 msgid "Resend Verification Email"
 msgstr "Resendi konfirman retmesaĝon"
 
-#: src/screens/Settings/Settings.tsx:482
-#: src/screens/Settings/Settings.tsx:484
+#: src/screens/Settings/Settings.tsx:489
+#: src/screens/Settings/Settings.tsx:491
 msgid "Reset activity subscription nudge"
 msgstr "Restarigi kubutumon pri agada abono"
 
@@ -7445,14 +7590,21 @@ msgstr "Restarigi kubutumon pri agada abono"
 msgid "Reset code"
 msgstr "Restariga kodo"
 
-#: src/screens/Settings/Settings.tsx:467
-#: src/screens/Settings/Settings.tsx:469
+#: src/screens/Settings/Settings.tsx:474
+#: src/screens/Settings/Settings.tsx:476
 msgid "Reset onboarding state"
 msgstr "Restarigi staton de la lernilo"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:80
 msgid "Reset password"
 msgstr "Restarigi pasvorton"
+
+#: src/components/PaywallModal.tsx:276
+#: src/components/PaywallModal.tsx:280
+#: src/screens/Subscription/SubscriptionScreen.tsx:197
+#: src/screens/Subscription/SubscriptionScreen.tsx:201
+msgid "Restore Purchases"
+msgstr ""
 
 #: src/screens/Login/LoginForm.tsx:327
 msgid "Retries signing in"
@@ -7465,11 +7617,11 @@ msgstr "Reprovas la lastan agon, kiu eraris"
 
 #: src/components/dms/MessageItem.tsx:322
 #: src/components/Error.tsx:65
-#: src/components/Lists.tsx:110
+#: src/components/Lists.tsx:114
 #: src/components/moderation/ReportDialog/index.tsx:274
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:58
-#: src/components/StarterPack/ProfileStarterPacks.tsx:342
+#: src/components/StarterPack/ProfileStarterPacks.tsx:374
 #: src/screens/Login/LoginForm.tsx:326
 #: src/screens/Login/LoginForm.tsx:333
 #: src/screens/Messages/ChatList.tsx:292
@@ -7503,7 +7655,7 @@ msgstr "Reveni al la antaŭa paĝo"
 msgid "Returns to home page"
 msgstr "Revenas al hejmpaĝo"
 
-#: src/screens/Profile/ProfileFeed/index.tsx:93
+#: src/screens/Profile/ProfileFeed/index.tsx:94
 #: src/screens/ProfileList/components/ErrorScreen.tsx:35
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:575
 #: src/screens/VideoFeed/index.tsx:1163
@@ -7586,8 +7738,8 @@ msgid "Saved Feeds"
 msgstr "Konservitaj fluoj"
 
 #: src/components/dialogs/nuxs/BookmarksAnnouncement.tsx:143
-#: src/Navigation.tsx:608
-#: src/screens/Bookmarks/index.tsx:55
+#: src/Navigation.tsx:610
+#: src/screens/Bookmarks/index.tsx:59
 msgid "Saved Posts"
 msgstr "Konservitaj afiŝoj"
 
@@ -7620,7 +7772,7 @@ msgstr "Rulumi maldekstren"
 msgid "Scroll right"
 msgstr "Rulumi dekstren"
 
-#: src/screens/ProfileList/AboutSection.tsx:130
+#: src/screens/ProfileList/AboutSection.tsx:131
 msgid "Scroll to top"
 msgstr "Rulumi al la supro"
 
@@ -7633,7 +7785,7 @@ msgstr "Rulumi al la supro"
 msgid "Search"
 msgstr "Serĉi"
 
-#: src/Navigation.tsx:257
+#: src/Navigation.tsx:259
 #: src/screens/Profile/ProfileSearch.tsx:37
 msgid "Search @{0}'s posts"
 msgstr "Serĉi afiŝojn de @{0}"
@@ -7753,6 +7905,11 @@ msgstr "Vidi pli"
 #: src/components/FeedInterstitials.tsx:392
 msgid "See more suggested profiles on the Explore page"
 msgstr "Vidi pli da proponoj sur la paĝo Esplori"
+
+#: src/view/com/profile/ProfileFollows.tsx:155
+#: src/view/com/profile/ProfileFollows.tsx:156
+msgid "See suggested accounts"
+msgstr ""
 
 #: src/screens/SavedFeeds.tsx:220
 msgid "See this guide"
@@ -8002,7 +8159,7 @@ msgstr ""
 msgid "Sets email for password reset"
 msgstr "Agordas retpoŝtadreson por restarigi pasvorton"
 
-#: src/Navigation.tsx:213
+#: src/Navigation.tsx:215
 #: src/screens/Settings/Settings.tsx:99
 #: src/view/shell/desktop/LeftNav.tsx:805
 #: src/view/shell/Drawer.tsx:609
@@ -8143,7 +8300,7 @@ msgstr "Konigi per..."
 msgid "Share your favorite feed!"
 msgstr "Konigu vian plej ŝatatan fluon!"
 
-#: src/Navigation.tsx:316
+#: src/Navigation.tsx:318
 msgid "Shared Preferences Tester"
 msgstr "Testanto de komunaj preferoj"
 
@@ -8310,9 +8467,9 @@ msgstr "Ensalutu al Bluesky aŭ kreu novan konton"
 msgid "Sign in to view post"
 msgstr "Ensalutu por vidi la afiŝon"
 
-#: src/screens/Settings/Settings.tsx:254
-#: src/screens/Settings/Settings.tsx:256
-#: src/screens/Settings/Settings.tsx:288
+#: src/screens/Settings/Settings.tsx:261
+#: src/screens/Settings/Settings.tsx:263
+#: src/screens/Settings/Settings.tsx:295
 #: src/screens/SignupQueued.tsx:93
 #: src/screens/SignupQueued.tsx:96
 #: src/screens/Takendown.tsx:94
@@ -8326,7 +8483,7 @@ msgstr "Elsaluti"
 msgid "Sign Out"
 msgstr "Elsaluti"
 
-#: src/screens/Settings/Settings.tsx:285
+#: src/screens/Settings/Settings.tsx:292
 #: src/view/shell/desktop/LeftNav.tsx:209
 msgid "Sign out?"
 msgstr "Ĉu elsaluti?"
@@ -8421,7 +8578,7 @@ msgstr "Io misokazis, bonvolu reprovi"
 msgid "Something went wrong, please try again."
 msgstr "Io misfunkciis, bonvolu reprovi."
 
-#: src/components/Lists.tsx:174
+#: src/components/Lists.tsx:184
 msgid "Something went wrong!"
 msgstr "Io misfunkciis!"
 
@@ -8441,7 +8598,7 @@ msgstr "Ĉu io misfunkciis? Sciigu nin."
 msgid "Sorry, we're unable to load account suggestions at this time."
 msgstr "Pordonu, ni ne eblis ŝargi kontajn proponojn nune."
 
-#: src/App.native.tsx:128
+#: src/App.native.tsx:136
 #: src/App.web.tsx:100
 msgid "Sorry! Your session expired. Please sign in again."
 msgstr "Pardonu! Via seanco eksvalidiĝis. Bonvolu ensaluti denove."
@@ -8485,13 +8642,13 @@ msgstr "Komencu konversacion, kaj ĝi aperos ĉi tie."
 msgid "Start a new chat"
 msgstr "Komenci novan babilejon"
 
-#: src/screens/ProfileList/AboutSection.tsx:102
-#: src/screens/ProfileList/FeedSection.tsx:74
+#: src/screens/ProfileList/AboutSection.tsx:103
+#: src/screens/ProfileList/FeedSection.tsx:81
 msgid "Start adding people"
 msgstr "Komenci aldoni homojn"
 
-#: src/screens/ProfileList/AboutSection.tsx:108
-#: src/screens/ProfileList/FeedSection.tsx:80
+#: src/screens/ProfileList/AboutSection.tsx:109
+#: src/screens/ProfileList/FeedSection.tsx:87
 msgid "Start adding people!"
 msgstr "Komencu aldoni homojn!"
 
@@ -8499,8 +8656,8 @@ msgstr "Komencu aldoni homojn!"
 msgid "Start chat with {displayName}"
 msgstr "Komenci babili kun {displayName}"
 
-#: src/Navigation.tsx:579
-#: src/Navigation.tsx:584
+#: src/Navigation.tsx:581
+#: src/Navigation.tsx:586
 #: src/screens/StarterPack/Wizard/index.tsx:209
 msgid "Starter Pack"
 msgstr "Startpako"
@@ -8523,16 +8680,20 @@ msgid "Starter pack is invalid"
 msgstr "Startpako nevalidas"
 
 #: src/screens/Search/Explore.tsx:625
-#: src/view/screens/Profile.tsx:231
+#: src/view/screens/Profile.tsx:240
 msgid "Starter Packs"
 msgstr "Startpakoj"
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:262
+#: src/components/StarterPack/ProfileStarterPacks.tsx:294
 msgid "Starter packs let you easily share your favorite feeds and people with your friends."
 msgstr "Starterpako ebligas al vi konigi viajn plej ŝatatajn fluojn kaj homojn kun viaj amikoj."
 
-#: src/screens/Settings/AboutSettings.tsx:100
-#: src/screens/Settings/AboutSettings.tsx:103
+#: src/view/screens/Profile.tsx:539
+msgid "Starter packs let you share your favorite feeds and people with your friends."
+msgstr ""
+
+#: src/screens/Settings/AboutSettings.tsx:98
+#: src/screens/Settings/AboutSettings.tsx:101
 msgid "Status Page"
 msgstr "Paĝo pri stato"
 
@@ -8540,12 +8701,12 @@ msgstr "Paĝo pri stato"
 msgid "Step {0} of {1}"
 msgstr "Paŝo {0} el {1}"
 
-#: src/screens/Settings/Settings.tsx:393
+#: src/screens/Settings/Settings.tsx:400
 msgid "Storage cleared, you need to restart the app now."
 msgstr "Konservejo vakigita, nun relanĉu la apon."
 
-#: src/Navigation.tsx:306
-#: src/screens/Settings/Settings.tsx:448
+#: src/Navigation.tsx:308
+#: src/screens/Settings/Settings.tsx:455
 msgid "Storybook"
 msgstr "Historio de agoj"
 
@@ -8573,6 +8734,7 @@ msgid "Submit report"
 msgstr "Sendi raporton"
 
 #: src/screens/ProfileList/components/SubscribeMenu.tsx:81
+#: src/screens/Subscription/SubscriptionScreen.tsx:315
 msgid "Subscribe"
 msgstr "Aboni"
 
@@ -8583,6 +8745,10 @@ msgstr "Aboni al @{0} por uzi tiujn etikedojn:"
 #: src/components/activity-notifications/SubscribeProfileDialog.tsx:245
 msgid "Subscribe to account activity"
 msgstr "Aboni al agado de la konto"
+
+#: src/components/PaywallModal.tsx:194
+msgid "Subscribe to continue using BlueFly"
+msgstr ""
 
 #: src/screens/Profile/Header/ProfileHeaderLabeler.tsx:343
 msgid "Subscribe to Labeler"
@@ -8595,6 +8761,24 @@ msgstr "Aboni al ĉi tiu etikedilo"
 #: src/screens/ProfileList/components/SubscribeMenu.tsx:69
 msgid "Subscribe to this list"
 msgstr "Aboni al ĉi tiu listo"
+
+#: src/Navigation.tsx:618
+#: src/screens/Settings/Settings.tsx:251
+#: src/screens/Subscription/SubscriptionScreen.tsx:57
+msgid "Subscription"
+msgstr ""
+
+#: src/screens/Subscription/SubscriptionScreen.tsx:184
+msgid "Subscriptions are only available on Amazon Fire devices"
+msgstr ""
+
+#: src/screens/Subscription/SubscriptionScreen.tsx:210
+msgid "Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Payment will be charged to your Amazon account."
+msgstr ""
+
+#: src/components/PaywallModal.tsx:291
+msgid "Subscriptions automatically renew unless cancelled. Payment will be charged to your Amazon account."
+msgstr ""
 
 #: src/components/ageAssurance/AgeAssuranceRedirectDialog.tsx:164
 msgid "Success"
@@ -8636,15 +8820,28 @@ msgctxt "Name of app icon variant"
 msgid "Sunset"
 msgstr "Sunsubiro"
 
-#: src/Navigation.tsx:326
+#: src/Navigation.tsx:328
 #: src/view/screens/Support.tsx:34
 #: src/view/screens/Support.tsx:37
 msgid "Support"
 msgstr "Subteno"
 
+#: src/components/PaywallModal.tsx:198
+msgid "Support BlueFly and enjoy premium features"
+msgstr ""
+
+#: src/screens/Subscription/SubscriptionScreen.tsx:78
+msgid "Support BlueFly development and enjoy an ad-free experience"
+msgstr ""
+
+#: src/components/PaywallModal.tsx:208
+#: src/screens/Subscription/SubscriptionScreen.tsx:119
+msgid "Support independent development"
+msgstr ""
+
 #: src/screens/Settings/Settings.tsx:123
 #: src/screens/Settings/Settings.tsx:137
-#: src/screens/Settings/Settings.tsx:606
+#: src/screens/Settings/Settings.tsx:613
 #: src/view/shell/desktop/LeftNav.tsx:247
 msgid "Switch account"
 msgstr "Ŝanĝi konton"
@@ -8670,9 +8867,9 @@ msgid "System"
 msgstr "Sistema"
 
 #: src/screens/Log.tsx:58
-#: src/screens/Settings/AboutSettings.tsx:107
-#: src/screens/Settings/AboutSettings.tsx:110
-#: src/screens/Settings/Settings.tsx:441
+#: src/screens/Settings/AboutSettings.tsx:105
+#: src/screens/Settings/AboutSettings.tsx:108
+#: src/screens/Settings/Settings.tsx:448
 msgid "System log"
 msgstr "Sistema protokolo"
 
@@ -8693,8 +8890,8 @@ msgid "Tap for more information"
 msgstr "Tuŝetu por pliaj informoj"
 
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:164
-msgid "Tap to acknowledge that you understand and agree to these updates and continue using Bluesky"
-msgstr "Tuŝetu por kvitanci, ke vi komprenas kaj konsentas pri tiuj aktualigoj kaj daŭre uzi Bluesky"
+msgid "Tap to acknowledge that you understand and agree to these updates and continue using BlueFly"
+msgstr ""
 
 #: src/components/ContextMenu/Backdrop.ios.tsx:54
 #: src/components/ContextMenu/Backdrop.ios.tsx:80
@@ -8747,9 +8944,9 @@ msgstr "Kondiĉoj"
 #: src/components/dialogs/BirthDateSettings.tsx:135
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:30
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:97
-#: src/Navigation.tsx:336
-#: src/screens/Settings/AboutSettings.tsx:84
-#: src/screens/Settings/AboutSettings.tsx:87
+#: src/Navigation.tsx:338
+#: src/screens/Settings/AboutSettings.tsx:82
+#: src/screens/Settings/AboutSettings.tsx:85
 #: src/view/screens/TermsOfService.tsx:34
 #: src/view/shell/Drawer.tsx:697
 #: src/view/shell/Drawer.tsx:699
@@ -8827,14 +9024,6 @@ msgstr "La naskiĝdato kiun vi entajpis signifas, ke vi aĝas malpli ol 18 jaroj
 msgid "The Bluesky web application"
 msgstr "La reta aplikaĵo de Bluesky"
 
-#: src/view/screens/CommunityGuidelines.tsx:41
-msgid "The Community Guidelines have been moved to <0/>"
-msgstr "La komunumaj gvidnormoj estis movitaj al <0/>"
-
-#: src/view/screens/CopyrightPolicy.tsx:38
-msgid "The Copyright Policy has been moved to <0/>"
-msgstr "La regularo pri kopirajtoj translokiĝis al <0/>"
-
 #: src/view/com/posts/FeedShutdownMsg.tsx:102
 msgid "The Discover feed"
 msgstr "La fluo Discover"
@@ -8875,10 +9064,6 @@ msgstr "La leĝaro en via loko devigas kontroli ke vi estas plenkreskulo por ali
 msgid "The post you're replying to was marked as being written in {suggestedLanguageName} by its author. Would you like to reply in <0>{suggestedLanguageName}</0>?"
 msgstr "La afiŝo al kiu vi respondas estis markita kiel tajpita en {suggestedLanguageName} de ĝia aŭtoro. Ĉu vi volas respondi en <0>{suggestedLanguageName}</0>?"
 
-#: src/view/screens/PrivacyPolicy.tsx:38
-msgid "The Privacy Policy has been moved to <0/>"
-msgstr "La regularo pri privateco translokiĝis al <0/>"
-
 #: src/view/com/composer/state/video.ts:395
 #: src/view/com/composer/state/video.ts:434
 msgid "The selected video is larger than 100 MB. Please try again with a smaller file."
@@ -8900,10 +9085,6 @@ msgstr "La temo de la kuntekstmenuo"
 #: src/view/screens/Support.tsx:40
 msgid "The support form has been moved. If you need help, please <0/> or visit {HELP_DESK_URL} to get in touch with us."
 msgstr "La formularo de subteno estis movita. Se vi bezonas helpon, bonvolu <0/> aŭ vizitu {HELP_DESK_URL} por kontakti nin."
-
-#: src/view/screens/TermsOfService.tsx:38
-msgid "The Terms of Service have been moved to"
-msgstr "La Uzkondiĉoj translokiĝis al"
 
 #: src/components/intents/VerifyEmailIntentDialog.tsx:88
 msgid "The verification code you have provided is invalid. Please make sure that you have used the correct verification link or request a new one."
@@ -8933,7 +9114,7 @@ msgstr "Estis problemo konektante servilon"
 msgid "There was an issue contacting the server, please check your internet connection and try again."
 msgstr "Estis problemo konektante servilon, bonvolu kontroli vian interretan konekton kaj reprovu."
 
-#: src/view/com/notifications/NotificationFeed.tsx:130
+#: src/view/com/notifications/NotificationFeed.tsx:131
 msgid "There was an issue fetching notifications. Tap here to try again."
 msgstr "Estis problemo ŝargante sciigojn. Tuŝetu ĉi tie por reprovi."
 
@@ -8946,12 +9127,12 @@ msgstr "Estis problemo ŝargante afiŝojn. Tuŝeti ĉi tie por reprovi."
 msgid "There was an issue fetching the list. Tap here to try again."
 msgstr "Estis problemo ŝargante la liston. Tuŝetu ĉi tie por reprovi."
 
-#: src/screens/Settings/AppPasswords.tsx:58
+#: src/screens/Settings/AppPasswords.tsx:59
 msgid "There was an issue fetching your app passwords"
 msgstr "Estis problemo ŝargante viajn apajn pasvortojn"
 
-#: src/view/com/feeds/ProfileFeedgens.tsx:163
-#: src/view/com/lists/ProfileLists.tsx:161
+#: src/view/com/feeds/ProfileFeedgens.tsx:174
+#: src/view/com/lists/ProfileLists.tsx:175
 msgid "There was an issue fetching your lists. Tap here to try again."
 msgstr "Estis problemo ŝargante viajn listojn. Tuŝetu ĉi tie por reprovi."
 
@@ -8959,7 +9140,7 @@ msgstr "Estis problemo ŝargante viajn listojn. Tuŝetu ĉi tie por reprovi."
 msgid "There was an issue fetching your service info"
 msgstr "Problemo okazis dum ŝarĝi infomojn de via servo"
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:149
+#: src/view/com/posts/PostFeedErrorMessage.tsx:152
 msgid "There was an issue removing this feed. Please check your internet connection and try again."
 msgstr "Estis problemo forigante ĉi tiun fluon. Bonvolu kontroli vian interretan konekton kaj reprovu."
 
@@ -9075,7 +9256,7 @@ msgstr "Ĉi tiu enhavo estas gastigata de {0}. Ĉu vi volas ebligi eksterajn aŭ
 msgid "This content is not available because one of the users involved has blocked the other."
 msgstr "Ĉi tiu enhavo ne disponeblas pro ke unu el la koncernataj uzantoj blokis la alian."
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:118
+#: src/view/com/posts/PostFeedErrorMessage.tsx:121
 msgid "This content is not viewable without a Bluesky account."
 msgstr "Ĉi tiu enhavo ne estas videbla sen Bluesky-konto."
 
@@ -9103,7 +9284,7 @@ msgstr "Ĉi tiu funkcio ne disponeblas dum uzado de apa pasvorto. Bonvolu ensalu
 msgid "This feature is not available while using an App Password. Please sign in with your main password."
 msgstr "Ĉi tiu funkcio ne disponeblas dum uzado de apa pasvorto. Bonvolu ensaluti per via ĉefa pasvorto."
 
-#: src/view/com/posts/PostFeedErrorMessage.tsx:124
+#: src/view/com/posts/PostFeedErrorMessage.tsx:127
 msgid "This feed is currently receiving high traffic and is temporarily unavailable. Please try again later."
 msgstr "Ĉi tiu fluo nune havas grandan datumtrafikon kaj dumtempe nedisponeblas. Bonvolu provi denove poste."
 
@@ -9111,9 +9292,9 @@ msgstr "Ĉi tiu fluo nune havas grandan datumtrafikon kaj dumtempe nedisponeblas
 msgid "This feed is empty! You may need to follow more users or tune your language settings."
 msgstr "Ĉi tiu fluo malplenas! Eble vi devas sekvi pli da uzantoj aŭ ŝanĝi viajn lingvajn agordojn."
 
-#: src/components/StarterPack/Main/PostsList.tsx:36
-#: src/screens/Profile/ProfileFeed/index.tsx:192
-#: src/screens/ProfileList/FeedSection.tsx:71
+#: src/components/StarterPack/Main/PostsList.tsx:41
+#: src/screens/Profile/ProfileFeed/index.tsx:197
+#: src/screens/ProfileList/FeedSection.tsx:77
 msgid "This feed is empty."
 msgstr "Ĉi tiu fluo malplenas."
 
@@ -9128,6 +9309,10 @@ msgstr "Tiu identigilo estas rezervita. Bonvolu provi alian."
 #: src/components/dialogs/BirthDateSettings.tsx:45
 msgid "This information is private and not shared with other users."
 msgstr "Ĉi tiuj informoj estas privataj kaj ne montrataj al aliaj uzantoj."
+
+#: src/view/screens/Debug.tsx:343
+msgid "This is an empty state"
+msgstr ""
 
 #: src/components/live/EditLiveDialog.tsx:189
 #: src/components/live/GoLiveDialog.tsx:157
@@ -9158,7 +9343,7 @@ msgstr "Nomo aŭ priskribo de ĉi tiu listo – kreita de <0>{0}</0> – enhavas
 msgid "This list – created by you – contains possible violations of Bluesky's community guidelines in its name or description."
 msgstr "Nomo aŭ priskribo de ĉi tiu listo – kreita de vi – enhavas eble malobservojn de komunumaj gvidnormoj de Bluesky."
 
-#: src/screens/ProfileList/AboutSection.tsx:98
+#: src/screens/ProfileList/AboutSection.tsx:99
 msgid "This list is empty."
 msgstr "Ĉi tiu listo malplenas."
 
@@ -9178,7 +9363,7 @@ msgstr "Ĉi tiu afiŝo havas nekonatan tipon de fadenado. Via apo eble estas mal
 msgid "This post is only visible to logged-in users."
 msgstr "Ĉi tiu afiŝo videblas nur al ensalutintaj uzantoj."
 
-#: src/screens/Bookmarks/index.tsx:245
+#: src/screens/Bookmarks/index.tsx:249
 msgid "This post was deleted by its author"
 msgstr "Ĉi tiu afiŝo estis forigita de ĝia aŭtoro"
 
@@ -9214,7 +9399,7 @@ msgstr "Tio daŭru nur kelkajn minutojn."
 msgid "This user does not have a display name, and therefore cannot be verified."
 msgstr "Ĉi tiu uzanto ne havas montratan nomon, kaj tial ne povas esti konfirmita."
 
-#: src/view/com/profile/ProfileFollowers.tsx:133
+#: src/view/com/profile/ProfileFollowers.tsx:136
 msgid "This user doesn't have any followers."
 msgstr "Ĉi tiu uzanto havas neniun sekvanton."
 
@@ -9243,7 +9428,7 @@ msgstr "Ĉi tiu uzanto estas inkluzivita en la listo <0>{0}</0>, kiun vi silenti
 msgid "This user is new here. Press for more info about when they joined."
 msgstr "Ĉi tiu uzanto novas ĉi tie. Premu por pliaj informoj pri kiam ties aliĝis."
 
-#: src/view/com/profile/ProfileFollows.tsx:133
+#: src/view/com/profile/ProfileFollows.tsx:147
 msgid "This user isn't following anyone."
 msgstr "Ĉi tiu uzanto sekvas neniun."
 
@@ -9251,7 +9436,7 @@ msgstr "Ĉi tiu uzanto sekvas neniun."
 msgid "This will delete \"{0}\" from your muted words. You can always add it back later."
 msgstr "Ĉi tio forigos \"{0}\" de viaj silentigitaj vortoj. Vi ĉiam povos realdoni ĝin poste."
 
-#: src/screens/Settings/Settings.tsx:658
+#: src/screens/Settings/Settings.tsx:665
 msgid "This will remove @{0} from the quick access list."
 msgstr "Ĉi tio forigos @{0} el la listo de rapidatingo."
 
@@ -9278,7 +9463,7 @@ msgstr "Fadenaj preferoj"
 msgid "Threaded"
 msgstr "Fadene"
 
-#: src/Navigation.tsx:369
+#: src/Navigation.tsx:371
 msgid "Threads Preferences"
 msgstr "Agordoj pri fadenoj"
 
@@ -9328,7 +9513,7 @@ msgstr "Plej popularaj"
 msgid "Top replies first"
 msgstr "La plej popularaj respondoj unue"
 
-#: src/Navigation.tsx:544
+#: src/Navigation.tsx:546
 msgid "Topic"
 msgstr "Temo"
 
@@ -9414,11 +9599,11 @@ msgstr "Ne eblas kontakti vian servon. Bonvolu kontroli vian interretan konekton
 msgid "Unable to delete"
 msgstr "Ne eblas forigi"
 
-#: src/screens/Settings/Settings.tsx:507
+#: src/screens/Settings/Settings.tsx:514
 msgid "Unapply Pull Request"
 msgstr "Malapliki tirpeton"
 
-#: src/screens/Settings/Settings.tsx:509
+#: src/screens/Settings/Settings.tsx:516
 msgid "Unapply Pull Request {currentChannel}"
 msgstr "Malapliki tirpeton {currentChannel}"
 
@@ -9523,6 +9708,10 @@ msgstr "Ne plu ŝati"
 msgid "Unlike ({0, plural, one {# like} other {# likes}})"
 msgstr "Ne plu ŝati ({0, plural, one {# ŝato} other {# ŝatoj}})"
 
+#: src/components/PaywallModal.tsx:185
+msgid "Unlock Full Access"
+msgstr ""
+
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoEmbedInnerNative.tsx:152
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/web-controls/VolumeControl.tsx:94
 msgctxt "video"
@@ -9606,8 +9795,8 @@ msgstr "Depinglita de viaj fadenoj"
 msgid "Unpinned list"
 msgstr "Listo depinglita"
 
-#: src/screens/Settings/Settings.tsx:474
-#: src/screens/Settings/Settings.tsx:476
+#: src/screens/Settings/Settings.tsx:481
+#: src/screens/Settings/Settings.tsx:483
 msgid "Unsnooze email reminder"
 msgstr "Maldormeti retmesaĝan sciigon"
 
@@ -9698,12 +9887,12 @@ msgstr "Alŝuti el la dosieroj"
 msgid "Upload from Library"
 msgstr "Alŝuti el la biblioteko"
 
-#: src/lib/api/index.ts:302
+#: src/lib/api/index.ts:310
 msgid "Uploading images..."
 msgstr "Alŝutado de bildoj..."
 
-#: src/lib/api/index.ts:368
-#: src/lib/api/index.ts:392
+#: src/lib/api/index.ts:376
+#: src/lib/api/index.ts:400
 msgid "Uploading link thumbnail..."
 msgstr "Alŝutado de ligila miniaturo..."
 
@@ -9711,7 +9900,7 @@ msgstr "Alŝutado de ligila miniaturo..."
 msgid "Uploading video..."
 msgstr "Alŝutado de videaĵo..."
 
-#: src/screens/Settings/AppPasswords.tsx:65
+#: src/screens/Settings/AppPasswords.tsx:66
 msgid "Use app passwords to sign in to other Bluesky clients without giving full access to your account or password."
 msgstr "Uzi apan pasvorton por ensaluti al aliaj Bluesky-klientoj ne donante plenan aliron al via konto aŭ pasvorto."
 
@@ -9835,7 +10024,7 @@ msgstr "Konfirmado malsukcesis, bonvolu reprovi."
 msgid "Verification settings"
 msgstr "Konfirmadaj agordoj"
 
-#: src/Navigation.tsx:206
+#: src/Navigation.tsx:208
 #: src/screens/Moderation/VerificationSettings.tsx:32
 msgid "Verification Settings"
 msgstr "Konfirmadaj agordoj"
@@ -9913,8 +10102,8 @@ msgstr "Konfirmado"
 msgid "Verifying your age assurance status"
 msgstr "Konfirmado de via stato de garantio pri aĝo"
 
-#: src/screens/Settings/AboutSettings.tsx:126
-#: src/screens/Settings/AboutSettings.tsx:155
+#: src/screens/Settings/AboutSettings.tsx:124
+#: src/screens/Settings/AboutSettings.tsx:153
 msgid "Version {0}"
 msgstr "Versio {0}"
 
@@ -9927,7 +10116,7 @@ msgstr "Videaĵo"
 msgid "Video failed to process"
 msgstr "Pritraktado de videaĵo fiaskis"
 
-#: src/Navigation.tsx:600
+#: src/Navigation.tsx:602
 msgid "Video Feed"
 msgstr "Videaĵo-fluo"
 
@@ -9965,7 +10154,7 @@ msgstr "Videaĵo alŝutita"
 msgid "Video: {0}"
 msgstr "Videaĵo: {0}"
 
-#: src/view/screens/Profile.tsx:228
+#: src/view/screens/Profile.tsx:237
 msgid "Videos"
 msgstr "Videaĵoj"
 
@@ -10037,7 +10226,7 @@ msgstr "Vidi afiŝon"
 #: src/components/ProfileHoverCard/index.web.tsx:466
 #: src/components/ProfileHoverCard/index.web.tsx:486
 #: src/components/ProfileHoverCard/index.web.tsx:513
-#: src/view/com/posts/PostFeedErrorMessage.tsx:179
+#: src/view/com/posts/PostFeedErrorMessage.tsx:182
 #: src/view/com/util/PostMeta.tsx:90
 #: src/view/com/util/PostMeta.tsx:127
 msgid "View profile"
@@ -10047,9 +10236,25 @@ msgstr "Vidi profilon"
 msgid "View the avatar"
 msgstr "Vidi la profilbildon"
 
+#: src/view/screens/CommunityGuidelines.tsx:41
+msgid "View the Community Guidelines at <0/>"
+msgstr ""
+
+#: src/view/screens/CopyrightPolicy.tsx:38
+msgid "View the Copyright Policy at <0/>"
+msgstr ""
+
 #: src/components/LabelingServiceCard/index.tsx:164
 msgid "View the labeling service provided by @{0}"
 msgstr "Vidi la etikedadan servon provizitan de @{0}"
+
+#: src/view/screens/PrivacyPolicy.tsx:38
+msgid "View the Privacy Policy at <0/>"
+msgstr ""
+
+#: src/view/screens/TermsOfService.tsx:38
+msgid "View the Terms of Service at"
+msgstr ""
 
 #: src/components/verification/VerificationCheckButton.tsx:99
 msgid "View this user's verifications"
@@ -10267,7 +10472,7 @@ msgstr "Bedaŭrinde, via serĉo malsukcesis. Bonvolu reprovi post kelkaj minutoj
 msgid "We're sorry! The post you are replying to has been deleted."
 msgstr "Ni bedaŭras! La afiŝo al kiu vi respondas estis forigita."
 
-#: src/components/Lists.tsx:194
+#: src/components/Lists.tsx:221
 #: src/view/screens/NotFound.tsx:50
 msgid "We're sorry! We can't find the page you were looking for."
 msgstr "Ni bedaŭras! Ni ne povas trovi la paĝon, kiun vi serĉis."
@@ -10391,6 +10596,11 @@ msgstr ""
 msgid "Write a message"
 msgstr "Tajpu mesaĝon"
 
+#: src/view/screens/Profile.tsx:433
+#: src/view/screens/Profile.tsx:434
+msgid "Write a post"
+msgstr ""
+
 #: src/view/com/composer/Composer.tsx:955
 msgid "Write post"
 msgstr "Tajpu afiŝon"
@@ -10476,9 +10686,9 @@ msgstr "Vi ne havas permeson elsendflui"
 msgid "You are not allowed to upload videos."
 msgstr "Vi ne rajtas alŝuti videaĵojn."
 
-#: src/view/com/profile/ProfileFollows.tsx:132
-msgid "You are not following anyone."
-msgstr "Vi sekvas neniun."
+#: src/view/com/profile/ProfileFollows.tsx:146
+msgid "You are not following anyone yet"
+msgstr ""
 
 #: src/components/live/queries.ts:156
 msgid "You are now live!"
@@ -10554,10 +10764,6 @@ msgstr "Vi povas elekti ĝis {MAX_IMAGES, plural, other {# bildojn}} entute."
 msgid "You can update this later from your settings."
 msgstr "Vi povas ĝisdatigi ĉi tion poste en viaj agordoj."
 
-#: src/view/com/profile/ProfileFollowers.tsx:132
-msgid "You do not have any followers."
-msgstr "Vi ne havas sekvantojn."
-
 #: src/screens/Profile/KnownFollowers.tsx:112
 msgid "You don't follow any users who follow @{name}."
 msgstr "Vi sekvas neniun uzanton kiu sekvas @{name}."
@@ -10619,12 +10825,7 @@ msgstr "Vi silentigis ĉi tiun uzanton"
 msgid "You have no conversations yet. Start one!"
 msgstr "Vi ankoraŭ havas neniun konversacion. Komencu iun!"
 
-#: src/view/com/feeds/ProfileFeedgens.tsx:151
-msgid "You have no feeds."
-msgstr "Vi ne havas fluojn."
-
 #: src/view/com/lists/MyLists.tsx:81
-#: src/view/com/lists/ProfileLists.tsx:149
 msgid "You have no lists."
 msgstr "Vi ne havas listojn."
 
@@ -10640,7 +10841,7 @@ msgstr "Vi ankoraŭ ne blokis iun ajn kontojn. Por bloki konton, rigardu ĝian p
 msgid "You have not muted any accounts yet. To mute an account, go to their profile and select \"Mute account\" from the menu on their account."
 msgstr "Vi ankoraŭ ne silentigis iun ajn konton. Por silentigi konton, iru al ties profilo kaj elektu \"Silentigi konton\" en la menuo de ties konto."
 
-#: src/components/Lists.tsx:57
+#: src/components/Lists.tsx:61
 msgid "You have reached the end"
 msgstr "Vi atingis la finon"
 
@@ -10652,9 +10853,13 @@ msgstr "Vi sukcese konfirmis vian retpoŝtadreson. Vi povas fermi ĉi tiun dialo
 msgid "You have temporarily reached the limit for video uploads. Please try again later."
 msgstr "Vi dumtempe atingis la limon por videaĵaj alŝutoj. Bonvolu reprovi poste."
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:259
+#: src/components/StarterPack/ProfileStarterPacks.tsx:291
 msgid "You haven't created a starter pack yet!"
 msgstr "Vi ankoraŭ kreis neniun startpakon!"
+
+#: src/view/com/feeds/ProfileFeedgens.tsx:155
+msgid "You haven't made any custom feeds yet."
+msgstr ""
 
 #: src/components/dialogs/MutedWords.tsx:403
 msgid "You haven't muted any words or tags yet"
@@ -10698,10 +10903,10 @@ msgid "You must be 13 years of age or older to create an account."
 msgstr "Vi devas esti almenaŭ 13-jaraĝa por krei konton."
 
 #: src/components/dialogs/BirthDateSettings.tsx:131
-msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
-msgstr "Vi devas aĝi almenaŭ 13 jarojn por uzi Bluesky. Legu niajn <0>uzokondiĉojn</0> por pliaj informoj."
+msgid "You must be at least 13 years old to use this app. Read our <0>Terms of Service</0> for more information."
+msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:330
+#: src/components/StarterPack/ProfileStarterPacks.tsx:362
 msgid "You must be following at least seven other people to generate a starter pack."
 msgstr "Vi devas sekvi almenaŭ sep aliajn homojn por generi startpakon."
 
@@ -10734,7 +10939,7 @@ msgstr "Vi konfirmu vian retpoŝtadreson, antaŭ ol vi povos ŝalti retpoŝtan 2
 msgid "You previously deactivated @{0}."
 msgstr "Vi antaŭe malaktivigis @{0}."
 
-#: src/screens/Settings/Settings.tsx:404
+#: src/screens/Settings/Settings.tsx:411
 msgid "You probably want to restart the app now."
 msgstr "Vi volu nun relanĉi la apon."
 
@@ -10746,7 +10951,7 @@ msgstr "Vi reagis per {0}"
 msgid "You reacted {0} to {1}"
 msgstr "Vi reagis per {0} al {1}"
 
-#: src/screens/Settings/Settings.tsx:286
+#: src/screens/Settings/Settings.tsx:293
 #: src/view/shell/desktop/LeftNav.tsx:210
 msgid "You will be signed out of all your accounts."
 msgstr "Vi elsalutos el ĉiuj viaj kontoj."
@@ -10878,8 +11083,8 @@ msgid "Your account repository, containing all public data records, can be downl
 msgstr "Via konta deponejo enhavanta ĉiujn publikajn datum-rikordojn estas elŝutebla kiel \"CAR\"-dosiero. Tiu dosiero ne enhavas aŭdvidaĵajn enkorpigaĵojn kiel bildoj aŭ viaj privataj datumoj kiuj devas esti elŝutotaj aparte."
 
 #: src/screens/Takendown.tsx:223
-msgid "Your account was found to be in violation of the <0>Bluesky Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
-msgstr "Via konto evidentiĝis esti kontraŭ la <0>Uzokondiĉoj de Bluesky Social</0>. Ni sendis vin retmesaĝon skizantan la specifan malobservon kaj suspendan periodon, se aplikebla. Vi povas apelacii ĉi tiun decidon se vi kredas, ke ĝi estis farita erare."
+msgid "Your account was found to be in violation of the <0>AT Protocol Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
+msgstr ""
 
 #: src/screens/Takendown.tsx:163
 msgid "Your appeal has been submitted. If your appeal succeeds, you will receive an email."
@@ -10942,7 +11147,7 @@ msgstr "Via fluo de sekvatoj estas malplena! Eksekvu pli da homoj por ekscii, ki
 msgid "Your full handle will be <0>@{0}</0>"
 msgstr "Via tuta identigilo estos <0>@{0}</0>"
 
-#: src/Navigation.tsx:516
+#: src/Navigation.tsx:518
 #: src/screens/Search/modules/ExploreInterestsCard.tsx:67
 #: src/screens/Settings/ContentAndMediaSettings.tsx:92
 #: src/screens/Settings/ContentAndMediaSettings.tsx:95

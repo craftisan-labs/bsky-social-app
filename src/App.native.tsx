@@ -3,6 +3,7 @@ import '#/logger/bitdrift/setup'
 import '#/view/icons'
 
 import React, {useEffect, useState} from 'react'
+import {firebaseAnalytics} from '#/lib/analytics'
 import {GestureHandlerRootView} from 'react-native-gesture-handler'
 import {
   initialWindowMetrics,
@@ -13,7 +14,7 @@ import * as SplashScreen from 'expo-splash-screen'
 import * as SystemUI from 'expo-system-ui'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
-import * as Sentry from '@sentry/react-native'
+import {Sentry} from '#/logger/sentry/lib'
 
 import {KeyboardControllerProvider} from '#/lib/hooks/useEnableKeyboardController'
 import {Provider as HideBottomBarBorderProvider} from '#/lib/hooks/useHideBottomBarBorder'
@@ -60,6 +61,7 @@ import {Provider as ProgressGuideProvider} from '#/state/shell/progress-guide'
 import {Provider as SelectedFeedProvider} from '#/state/shell/selected-feed'
 import {Provider as StarterPackProvider} from '#/state/shell/starter-pack'
 import {Provider as HiddenRepliesProvider} from '#/state/threadgate-hidden-replies'
+import {IAPProvider, PaywallProvider} from '#/lib/iap'
 import {TestCtrls} from '#/view/com/testing/TestCtrls'
 import * as Toast from '#/view/com/util/Toast'
 import {Shell} from '#/view/shell'
@@ -78,6 +80,12 @@ import {BottomSheetProvider} from '../modules/bottom-sheet'
 import {BackgroundNotificationPreferencesProvider} from '../modules/expo-background-notification-handler/src/BackgroundNotificationHandlerProvider'
 
 SplashScreen.preventAutoHideAsync()
+
+// Initialize Firebase Analytics
+firebaseAnalytics.init().then(() => {
+  firebaseAnalytics.logAppOpen()
+})
+
 if (isIOS) {
   SystemUI.setBackgroundColorAsync('black')
 }
@@ -231,10 +239,14 @@ function App() {
                         <PortalProvider>
                           <BottomSheetProvider>
                             <StarterPackProvider>
-                              <SafeAreaProvider
-                                initialMetrics={initialWindowMetrics}>
-                                <InnerApp />
-                              </SafeAreaProvider>
+                              <IAPProvider>
+                                <PaywallProvider>
+                                  <SafeAreaProvider
+                                    initialMetrics={initialWindowMetrics}>
+                                    <InnerApp />
+                                  </SafeAreaProvider>
+                                </PaywallProvider>
+                              </IAPProvider>
                             </StarterPackProvider>
                           </BottomSheetProvider>
                         </PortalProvider>

@@ -1,5 +1,5 @@
 import {beforeAll, describe, expect, jest, test} from '@jest/globals'
-import * as Sentry from '@sentry/react-native'
+import {Sentry} from '#/logger/sentry/lib'
 import {nanoid} from 'nanoid/non-secure'
 
 import {Logger} from '#/logger'

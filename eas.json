@@ -2,7 +2,7 @@
   "cli": {
     "version": ">= 3.8.1",
     "promptToConfigurePushNotifications": false,
-    "appVersionSource": "remote"
+    "appVersionSource": "local"
   },
   "build": {
     "base": {
@@ -13,89 +13,52 @@
       "developmentClient": true,
       "distribution": "internal",
       "channel": "development",
-      "ios": {
-        "simulator": true,
-        "resourceClass": "large"
+      "android": {
+        "buildType": "apk"
       },
       "env": {
-        "EXPO_PUBLIC_ENV": "production"
+        "EXPO_PUBLIC_ENV": "development"
       }
     },
     "preview": {
       "extends": "base",
       "distribution": "internal",
-      "channel": "production",
-      "ios": {
-        "resourceClass": "large"
+      "channel": "preview",
+      "android": {
+        "buildType": "apk"
       },
       "env": {
-        "EXPO_PUBLIC_ENV": "production"
+        "EXPO_PUBLIC_ENV": "preview"
       }
     },
     "production": {
       "extends": "base",
-      "ios": {
-        "resourceClass": "large",
-        "autoIncrement": true,
-        "buildArtifactPaths": ["ios/build/*"]
-      },
       "android": {
-        "autoIncrement": true
+        "autoIncrement": true,
+        "buildType": "apk"
       },
       "channel": "production",
       "env": {
         "EXPO_PUBLIC_ENV": "production"
       }
     },
-    "production-apk": {
+    "amazon-appstore": {
       "extends": "base",
-      "distribution": "internal",
-      "ios": {
-        "autoIncrement": false,
-        "buildArtifactPaths": ["ios/build/*"]
-      },
+      "distribution": "store",
       "android": {
-        "autoIncrement": false
+        "autoIncrement": true,
+        "buildType": "apk"
       },
       "channel": "production",
       "env": {
         "EXPO_PUBLIC_ENV": "production"
-      }
-    },
-    "testflight": {
-      "extends": "base",
-      "ios": {
-        "autoIncrement": true,
-        "buildArtifactPaths": ["ios/build/*"]
-      },
-      "android": {
-        "autoIncrement": true
-      },
-      "channel": "testflight",
-      "env": {
-        "EXPO_PUBLIC_ENV": "testflight"
-      }
-    },
-    "testflight-android": {
-      "extends": "base",
-      "distribution": "internal",
-      "ios": {
-        "autoIncrement": true,
-        "buildArtifactPaths": ["ios/build/*"]
-      },
-      "android": {
-        "autoIncrement": true
-      },
-      "channel": "testflight",
-      "env": {
-        "EXPO_PUBLIC_ENV": "testflight"
       }
     }
   },
   "submit": {
     "production": {
-      "ios": {
-        "ascAppId": "6444370199"
+      "android": {
+        "track": "production"
       }
     }
   }

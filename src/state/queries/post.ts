@@ -2,6 +2,7 @@ import {useCallback} from 'react'
 import {type AppBskyActorDefs, type AppBskyFeedDefs, AtUri} from '@atproto/api'
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 
+import {logInteraction} from '#/lib/analytics'
 import {useToggleMutationQueue} from '#/lib/hooks/useToggleMutationQueue'
 import {type LogEvents, toClout} from '#/lib/statsig/statsig'
 import {logger} from '#/logger'
@@ -174,7 +175,7 @@ function usePostLikeMutation(
     Error,
     {uri: string; cid: string; via?: {uri: string; cid: string}} // the post's uri and cid, and the repost uri/cid if present
   >({
-    mutationFn: ({uri, cid, via}) => {
+    mutationFn: async ({uri, cid, via}) => {
       let ownProfile: AppBskyActorDefs.ProfileViewDetailed | undefined
       if (currentAccount) {
         ownProfile = findProfileQueryData(queryClient, currentAccount.did)
@@ -196,7 +197,10 @@ function usePostLikeMutation(
             : undefined,
         feedDescriptor: feedDescriptor,
       })
-      return agent.like(uri, cid, via)
+      const result = await agent.like(uri, cid, via)
+      // Firebase Analytics
+      logInteraction('post_liked', {postUri: uri})
+      return result
     },
   })
 }
@@ -207,9 +211,11 @@ function usePostUnlikeMutation(
 ) {
   const agent = useAgent()
   return useMutation<void, Error, {postUri: string; likeUri: string}>({
-    mutationFn: ({likeUri}) => {
+    mutationFn: async ({postUri, likeUri}) => {
       logger.metric('post:unlike', {logContext, feedDescriptor})
-      return agent.deleteLike(likeUri)
+      await agent.deleteLike(likeUri)
+      // Firebase Analytics
+      logInteraction('post_unliked', {postUri})
     },
   })
 }
@@ -285,9 +291,12 @@ function usePostRepostMutation(
     Error,
     {uri: string; cid: string; via?: {uri: string; cid: string}} // the post's uri and cid, and the repost uri/cid if present
   >({
-    mutationFn: ({uri, cid, via}) => {
+    mutationFn: async ({uri, cid, via}) => {
       logger.metric('post:repost', {logContext, feedDescriptor})
-      return agent.repost(uri, cid, via)
+      const result = await agent.repost(uri, cid, via)
+      // Firebase Analytics
+      logInteraction('post_reposted', {postUri: uri})
+      return result
     },
   })
 }
@@ -298,9 +307,11 @@ function usePostUnrepostMutation(
 ) {
   const agent = useAgent()
   return useMutation<void, Error, {postUri: string; repostUri: string}>({
-    mutationFn: ({repostUri}) => {
+    mutationFn: async ({postUri, repostUri}) => {
       logger.metric('post:unrepost', {logContext, feedDescriptor})
-      return agent.deleteRepost(repostUri)
+      await agent.deleteRepost(repostUri)
+      // Firebase Analytics
+      logInteraction('post_unreposted', {postUri})
     },
   })
 }

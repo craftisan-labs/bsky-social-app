@@ -1,8 +1,8 @@
 import {type AtpSessionData, type AtpSessionEvent} from '@atproto/api'
 import {sha256} from 'js-sha256'
-import {Statsig} from 'statsig-react-native-expo'
 
 import {IS_INTERNAL} from '#/env'
+import {logger} from '#/logger'
 import {type Schema} from '../persisted'
 import {type Action, type State} from './reducer'
 import {type SessionAccount} from './types'
@@ -71,14 +71,11 @@ export function wrapSessionReducerForLogging(reducer: Reducer): Reducer {
 let nextMessageIndex = 0
 const MAX_SLICE_LENGTH = 1000
 
-// Not gated.
+// Session error logging (Statsig removed, using logger)
 export function addSessionErrorLog(did: string, event: AtpSessionEvent) {
   try {
-    if (!Statsig.initializeCalled() || !Statsig.getStableID()) {
-      return
-    }
     const stack = (new Error().stack ?? '').slice(0, MAX_SLICE_LENGTH)
-    Statsig.logEvent('session:error', null, {
+    logger.error('session:error', {
       did,
       event,
       stack,
@@ -90,17 +87,9 @@ export function addSessionErrorLog(did: string, event: AtpSessionEvent) {
 
 export function addSessionDebugLog(log: Log) {
   try {
-    if (!Statsig.initializeCalled() || !Statsig.getStableID()) {
-      // Drop these logs for now.
-      return
-    }
-    // DISABLING THIS GATE DUE TO EME @TODO EME-GATE
     if (!IS_INTERNAL) {
       return
     }
-    // if (!Statsig.checkGate('debug_session')) {
-    //   return
-    // }
     const messageIndex = nextMessageIndex++
     const {type, ...content} = log
     let payload = JSON.stringify(content, replacer)
@@ -110,7 +99,7 @@ export function addSessionDebugLog(log: Log) {
       const sliceIndex = nextSliceIndex++
       const slice = payload.slice(0, MAX_SLICE_LENGTH)
       payload = payload.slice(MAX_SLICE_LENGTH)
-      Statsig.logEvent('session:debug', null, {
+      logger.debug('session:debug', {
         realmId,
         messageIndex: String(messageIndex),
         messageType: type,

@@ -1,27 +1,11 @@
-import {init, SessionStrategy} from '@bitdrift/react-native'
-import {Statsig} from 'statsig-react-native-expo'
+/**
+ * Bitdrift logging setup - DISABLED for BlueFly
+ * 
+ * The original Bluesky app used Bitdrift for logging.
+ * BlueFly uses Firebase Analytics instead.
+ * 
+ * This file is kept as a no-op for compatibility.
+ */
 
-import {initPromise} from '#/lib/statsig/statsig'
-import {BITDRIFT_API_KEY} from '#/env'
-
-initPromise.then(() => {
-  let isEnabled = false
-  let isNetworkEnabled = false
-  try {
-    if (Statsig.checkGate('enable_bitdrift_v2')) {
-      isEnabled = true
-    }
-    if (Statsig.checkGate('enable_bitdrift_v2_networking')) {
-      isNetworkEnabled = true
-    }
-  } catch (e) {
-    // Statsig may complain about it being called too early.
-  }
-  if (isEnabled && BITDRIFT_API_KEY) {
-    init(BITDRIFT_API_KEY, SessionStrategy.Activity, {
-      url: 'https://api-bsky.bitdrift.io',
-      // Only effects iOS, Android instrumentation is set via Gradle Plugin
-      enableNetworkInstrumentation: isNetworkEnabled,
-    })
-  }
-})
+// No-op - Bitdrift is disabled
+console.log('[BlueFly] Bitdrift logging disabled, using Firebase Analytics')
