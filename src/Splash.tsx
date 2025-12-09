@@ -3,6 +3,7 @@ import {
   AccessibilityInfo,
   Image as RNImage,
   StyleSheet,
+  Text,
   useColorScheme,
   View,
 } from 'react-native'
@@ -207,10 +208,9 @@ export function Splash(props: React.PropsWithChildren<Props>) {
                 right: 0,
                 alignItems: 'center',
                 justifyContent: 'center',
-                opacity: 0,
               },
             ]}>
-            <Logotype fill="#fff" width={90} />
+            <Logotype fill={isDarkMode ? '#fff' : '#000'} width={90} />
           </Animated.View>
         </View>
       )}
@@ -222,21 +222,60 @@ export function Splash(props: React.PropsWithChildren<Props>) {
           </Animated.View>
 
           {!isAnimationComplete && (
-            <Animated.View
-              style={[
-                StyleSheet.absoluteFillObject,
-                logoWrapperAnimation,
-                {
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  transform: [{translateY: -(insets.top / 2)}, {scale: 0.1}], // scale from 1000px to 100px
-                },
-              ]}>
-              <Animated.View style={[logoAnimations]}>
-                <Logo fill={logoBg} />
+            <>
+              <Animated.View
+                style={[
+                  StyleSheet.absoluteFillObject,
+                  logoWrapperAnimation,
+                  {
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    transform: [{translateY: -(insets.top / 2)}, {scale: 0.1}], // scale from 1000px to 100px
+                  },
+                ]}>
+                <Animated.View style={[logoAnimations]}>
+                  <Logo fill={logoBg} />
+                </Animated.View>
               </Animated.View>
-            </Animated.View>
+
+              {/* Disclaimer text - rendered on top of logo overlay */}
+              <View
+                style={{
+                  position: 'absolute',
+                  bottom: insets.bottom + 80,
+                  left: 20,
+                  right: 20,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                <Text
+                  style={{
+                    color: isDarkMode
+                      ? 'rgba(255, 255, 255, 0.7)'
+                      : 'rgba(0, 0, 0, 0.5)',
+                    fontSize: 9,
+                    textAlign: 'center',
+                    lineHeight: 14,
+                    fontStyle: 'italic',
+                  }}>
+                  Disclaimer: This app uses the official BlueSky AT Protocol but
+                  is not endorsed or certified by BlueSky PBLLC.
+                </Text>
+                <Text
+                  style={{
+                    color: isDarkMode
+                      ? 'rgba(255, 255, 255, 0.8)'
+                      : 'rgba(0, 0, 0, 0.6)',
+                    fontSize: 10,
+                    textAlign: 'center',
+                    marginTop: 8,
+                    fontWeight: '500',
+                  }}>
+                  Social data powered by BlueSky®.
+                </Text>
+              </View>
+            </>
           )}
         </>
       )}

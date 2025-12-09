@@ -188,8 +188,68 @@ export type ButtonEvent =
   | 'button_emoji'
   | 'button_attach'
 
+// Paywall and Subscription Events
+export type PaywallEvent =
+  | 'paywall_viewed'
+  | 'paywall_dismissed'
+  | 'paywall_plan_selected'
+  | 'paywall_purchase_started'
+  | 'paywall_purchase_success'
+  | 'paywall_purchase_failed'
+  | 'paywall_purchase_cancelled'
+  | 'paywall_restore_tapped'
+  | 'paywall_restore_success'
+  | 'paywall_restore_failed'
+  | 'paywall_triggered'
+
+export type SubscriptionEvent =
+  | 'subscription_activated'
+  | 'subscription_expired'
+  | 'subscription_renewed'
+
+export type OnboardingEvent =
+  | 'onboarding_started'
+  | 'onboarding_step_viewed'
+  | 'onboarding_step_completed'
+  | 'onboarding_completed'
+  | 'onboarding_abandoned'
+
+export type SessionEvent =
+  | 'session_started'
+  | 'session_resumed'
+  | 'app_backgrounded'
+  | 'app_foregrounded'
+
 export interface EventParams {
   [key: string]: string | number | boolean | undefined
+}
+
+export interface PaywallEventParams {
+  user_did?: string
+  dismiss_count?: number
+  plan_type?: 'monthly' | 'quarterly'
+  product_id?: string
+  price?: string
+  can_dismiss?: boolean
+  error_message?: string
+  time_on_screen_ms?: number
+  source?: 'login' | 'app_foreground' | 'manual' | 'session_start'
+}
+
+export interface OnboardingEventParams {
+  user_did?: string
+  step_name?: string
+  step_index?: number
+  time_on_step_ms?: number
+  total_time_ms?: number
+  interests_selected?: string
+  interests_count?: number
+}
+
+export interface SessionEventParams {
+  user_did?: string
+  login_method?: string
+  session_duration_ms?: number
 }
 
 // =============================================================================
@@ -220,7 +280,9 @@ class FirebaseAnalyticsService {
     this.isEnabled = enabled
     try {
       await analytics().setAnalyticsCollectionEnabled(enabled)
-      logger.debug(`FirebaseAnalytics: Collection ${enabled ? 'enabled' : 'disabled'}`)
+      logger.debug(
+        `FirebaseAnalytics: Collection ${enabled ? 'enabled' : 'disabled'}`,
+      )
     } catch (error) {
       logger.error('FirebaseAnalytics: Failed to set enabled state', {error})
     }
@@ -233,7 +295,9 @@ class FirebaseAnalyticsService {
     this.userId = userId
     try {
       await analytics().setUserId(userId)
-      logger.debug('FirebaseAnalytics: User ID set', {userId: userId ? '[SET]' : '[CLEARED]'})
+      logger.debug('FirebaseAnalytics: User ID set', {
+        userId: userId ? '[SET]' : '[CLEARED]',
+      })
     } catch (error) {
       logger.error('FirebaseAnalytics: Failed to set user ID', {error})
     }
@@ -264,7 +328,10 @@ class FirebaseAnalyticsService {
       })
       logger.debug('FirebaseAnalytics: Screen view', {screenName})
     } catch (error) {
-      logger.error('FirebaseAnalytics: Failed to log screen view', {error, screenName})
+      logger.error('FirebaseAnalytics: Failed to log screen view', {
+        error,
+        screenName,
+      })
     }
   }
 
@@ -280,7 +347,10 @@ class FirebaseAnalyticsService {
       })
       logger.debug('FirebaseAnalytics: User journey event', {event, params})
     } catch (error) {
-      logger.error('FirebaseAnalytics: Failed to log user journey', {error, event})
+      logger.error('FirebaseAnalytics: Failed to log user journey', {
+        error,
+        event,
+      })
     }
   }
 
@@ -296,7 +366,10 @@ class FirebaseAnalyticsService {
       })
       logger.debug('FirebaseAnalytics: Interaction event', {event, params})
     } catch (error) {
-      logger.error('FirebaseAnalytics: Failed to log interaction', {error, event})
+      logger.error('FirebaseAnalytics: Failed to log interaction', {
+        error,
+        event,
+      })
     }
   }
 
@@ -312,7 +385,10 @@ class FirebaseAnalyticsService {
       })
       logger.debug('FirebaseAnalytics: Button tap', {button, params})
     } catch (error) {
-      logger.error('FirebaseAnalytics: Failed to log button tap', {error, button})
+      logger.error('FirebaseAnalytics: Failed to log button tap', {
+        error,
+        button,
+      })
     }
   }
 
@@ -422,6 +498,85 @@ class FirebaseAnalyticsService {
       logger.error('FirebaseAnalytics: Failed to reset data', {error})
     }
   }
+
+  /**
+   * Log a paywall event with standardized parameters
+   */
+  async logPaywallEvent(event: PaywallEvent, params?: PaywallEventParams) {
+    try {
+      await analytics().logEvent(event, {
+        ...params,
+        event_category: 'paywall',
+        timestamp: Date.now(),
+      })
+      logger.debug('FirebaseAnalytics: Paywall event', {event, params})
+    } catch (error) {
+      logger.error('FirebaseAnalytics: Failed to log paywall event', {
+        error,
+        event,
+      })
+    }
+  }
+
+  /**
+   * Log a subscription event
+   */
+  async logSubscriptionEvent(event: SubscriptionEvent, params?: EventParams) {
+    try {
+      await analytics().logEvent(event, {
+        ...params,
+        event_category: 'subscription',
+        timestamp: Date.now(),
+      })
+      logger.debug('FirebaseAnalytics: Subscription event', {event, params})
+    } catch (error) {
+      logger.error('FirebaseAnalytics: Failed to log subscription event', {
+        error,
+        event,
+      })
+    }
+  }
+
+  /**
+   * Log an onboarding event with standardized parameters
+   */
+  async logOnboardingEvent(
+    event: OnboardingEvent,
+    params?: OnboardingEventParams,
+  ) {
+    try {
+      await analytics().logEvent(event, {
+        ...params,
+        event_category: 'onboarding',
+        timestamp: Date.now(),
+      })
+      logger.debug('FirebaseAnalytics: Onboarding event', {event, params})
+    } catch (error) {
+      logger.error('FirebaseAnalytics: Failed to log onboarding event', {
+        error,
+        event,
+      })
+    }
+  }
+
+  /**
+   * Log a session event with standardized parameters
+   */
+  async logSessionEvent(event: SessionEvent, params?: SessionEventParams) {
+    try {
+      await analytics().logEvent(event, {
+        ...params,
+        event_category: 'session',
+        timestamp: Date.now(),
+      })
+      logger.debug('FirebaseAnalytics: Session event', {event, params})
+    } catch (error) {
+      logger.error('FirebaseAnalytics: Failed to log session event', {
+        error,
+        event,
+      })
+    }
+  }
 }
 
 // =============================================================================
@@ -464,3 +619,34 @@ export const logButtonTap = (button: ButtonEvent, params?: EventParams) =>
 export const logEvent = (eventName: string, params?: EventParams) =>
   firebaseAnalytics.logEvent(eventName, params)
 
+/**
+ * Log a paywall event
+ */
+export const logPaywallEvent = (
+  event: PaywallEvent,
+  params?: PaywallEventParams,
+) => firebaseAnalytics.logPaywallEvent(event, params)
+
+/**
+ * Log a subscription event
+ */
+export const logSubscriptionEvent = (
+  event: SubscriptionEvent,
+  params?: EventParams,
+) => firebaseAnalytics.logSubscriptionEvent(event, params)
+
+/**
+ * Log an onboarding event
+ */
+export const logOnboardingEvent = (
+  event: OnboardingEvent,
+  params?: OnboardingEventParams,
+) => firebaseAnalytics.logOnboardingEvent(event, params)
+
+/**
+ * Log a session event
+ */
+export const logSessionEvent = (
+  event: SessionEvent,
+  params?: SessionEventParams,
+) => firebaseAnalytics.logSessionEvent(event, params)

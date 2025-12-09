@@ -2,7 +2,10 @@
  * Expo Config Plugin for Amazon In-App Purchasing
  * Configures the Android app for Amazon Appstore IAP
  */
-const {withAppBuildGradle, withAndroidManifest} = require('@expo/config-plugins')
+const {
+  withAppBuildGradle,
+  withAndroidManifest,
+} = require('@expo/config-plugins')
 
 function withAmazonIAPBuildGradle(config) {
   return withAppBuildGradle(config, config => {
@@ -15,7 +18,7 @@ function withAmazonIAPBuildGradle(config) {
         config.modResults.contents = buildGradle.replace(
           defaultConfigRegex,
           `defaultConfig {
-        missingDimensionStrategy 'store', 'amazon'`
+        missingDimensionStrategy 'store', 'amazon'`,
         )
       }
     }
@@ -35,7 +38,7 @@ function withAmazonIAPManifest(config) {
 
       // Check if Amazon receiver already exists
       const hasAmazonReceiver = mainApplication.receiver.some(
-        r => r.$?.['android:name'] === 'com.amazon.device.iap.ResponseReceiver'
+        r => r.$?.['android:name'] === 'com.amazon.device.iap.ResponseReceiver',
       )
 
       if (!hasAmazonReceiver) {
@@ -43,7 +46,9 @@ function withAmazonIAPManifest(config) {
           $: {
             'android:name': 'com.amazon.device.iap.ResponseReceiver',
             'android:exported': 'false',
-            'android:permission': 'com.amazon.inapp.purchasing.Permission.NOTIFY',
+            'android:permission':
+              'com.amazon.inapp.purchasing.Permission.NOTIFY',
+            'tools:replace': 'android:exported',
           },
           'intent-filter': [
             {
@@ -57,6 +62,16 @@ function withAmazonIAPManifest(config) {
             },
           ],
         })
+      } else {
+        // Update existing receiver to fix manifest merger conflict
+        const amazonReceiver = mainApplication.receiver.find(
+          r =>
+            r.$?.['android:name'] === 'com.amazon.device.iap.ResponseReceiver',
+        )
+        if (amazonReceiver && !amazonReceiver.$?.['tools:replace']) {
+          amazonReceiver.$['tools:replace'] = 'android:exported'
+          amazonReceiver.$['android:exported'] = 'false'
+        }
       }
     }
 
@@ -69,4 +84,3 @@ module.exports = function withAmazonIAP(config) {
   config = withAmazonIAPManifest(config)
   return config
 }
-

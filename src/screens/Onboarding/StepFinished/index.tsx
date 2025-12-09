@@ -1,4 +1,4 @@
-import {useCallback, useContext, useState} from 'react'
+import {useCallback, useContext, useRef, useState} from 'react'
 import {View} from 'react-native'
 import {
   type AppBskyActorDefs,
@@ -12,6 +12,7 @@ import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'
 
+import {useAnalytics} from '#/lib/analytics'
 import {uploadBlob} from '#/lib/api'
 import {
   BSKY_APP_ACCOUNT_DID,
@@ -67,6 +68,8 @@ export function StepFinished() {
   const setHasCheckedForStarterPack = useSetHasCheckedForStarterPack()
   const {startProgressGuide} = useProgressGuideControls()
   const gate = useGate()
+  const {trackOnboarding} = useAnalytics()
+  const onboardingStartTime = useRef<number>(Date.now())
 
   const finishOnboarding = useCallback(async () => {
     setSaving(true)
@@ -209,6 +212,16 @@ export function StepFinished() {
     startProgressGuide(
       gate('old_postonboarding') ? 'like-10-and-follow-7' : 'follow-10',
     )
+
+    // Track onboarding completed with Firebase Analytics
+    const totalTimeMs = Date.now() - onboardingStartTime.current
+    const selectedInterests = state.interestsStepResults.selectedInterests
+    trackOnboarding('onboarding_completed', {
+      total_time_ms: totalTimeMs,
+      interests_selected: selectedInterests.join(','),
+      interests_count: selectedInterests.length,
+    })
+
     dispatch({type: 'finish'})
     onboardDispatch({type: 'finish'})
     logEvent('onboarding:finished:nextPressed', {
@@ -245,6 +258,7 @@ export function StepFinished() {
     setHasCheckedForStarterPack,
     startProgressGuide,
     gate,
+    trackOnboarding,
   ])
 
   return state.experiments?.onboarding_value_prop ? (

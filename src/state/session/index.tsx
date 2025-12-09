@@ -1,7 +1,9 @@
 import React from 'react'
+import {Platform} from 'react-native'
 import {type AtpSessionEvent, type BskyAgent} from '@atproto/api'
 
 import {firebaseAnalytics, logUserJourney} from '#/lib/analytics'
+import {getDismissCount, isUserSubscribed} from '#/lib/iap/PaywallState'
 import {isWeb} from '#/platform/detection'
 import * as persisted from '#/state/persisted'
 import {useCloseAllActiveElements} from '#/state/util'
@@ -132,6 +134,15 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
       // Firebase Analytics - Signup completed
       firebaseAnalytics.logSignUp('email')
       firebaseAnalytics.setUserId(account.did)
+
+      // Set user properties for segmentation
+      const dismissCount = getDismissCount()
+      firebaseAnalytics.setUserProperties({
+        subscription_status: isUserSubscribed() ? 'subscribed' : 'free',
+        dismiss_count: dismissCount >= 2 ? '2+' : String(dismissCount),
+        platform: Platform.OS,
+      })
+
       logUserJourney('signup_completed', {handle: account.handle})
       addSessionDebugLog({type: 'method:end', method: 'createAccount', account})
     },
@@ -163,6 +174,15 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
       // Firebase Analytics - Login completed
       firebaseAnalytics.logLogin('email')
       firebaseAnalytics.setUserId(account.did)
+
+      // Set user properties for segmentation
+      const dismissCount = getDismissCount()
+      firebaseAnalytics.setUserProperties({
+        subscription_status: isUserSubscribed() ? 'subscribed' : 'free',
+        dismiss_count: dismissCount >= 2 ? '2+' : String(dismissCount),
+        platform: Platform.OS,
+      })
+
       logUserJourney('login_completed', {logContext})
       addSessionDebugLog({type: 'method:end', method: 'login', account})
     },
@@ -236,6 +256,15 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
       })
       // Firebase Analytics - Session resumed
       firebaseAnalytics.setUserId(account.did)
+
+      // Set user properties for segmentation
+      const dismissCount = getDismissCount()
+      firebaseAnalytics.setUserProperties({
+        subscription_status: isUserSubscribed() ? 'subscribed' : 'free',
+        dismiss_count: dismissCount >= 2 ? '2+' : String(dismissCount),
+        platform: Platform.OS,
+      })
+
       logUserJourney('session_resumed', {handle: account.handle})
       addSessionDebugLog({type: 'method:end', method: 'resumeSession', account})
     },

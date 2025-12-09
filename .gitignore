@@ -130,3 +130,7 @@ AppstoreAuthenticationKey.pem
 .envrc
 firebase.json
 google-services.json
+
+# Release keystore (keep secure!)
+android/keystore.properties
+android/app/bluefly-release.keystore

@@ -24,11 +24,11 @@ module.exports = function (_config) {
     ...(IS_DEV || IS_TESTFLIGHT ? [] : []),
   ]
 
-  const UPDATES_ENABLED = IS_TESTFLIGHT || IS_PRODUCTION
+  const _UPDATES_ENABLED = IS_TESTFLIGHT || IS_PRODUCTION
 
   // Sentry error tracking - set SENTRY_AUTH_TOKEN env var to enable
   // TODO: Set up your own Sentry project at https://sentry.io
-  const USE_SENTRY = Boolean(process.env.SENTRY_AUTH_TOKEN)
+  const _USE_SENTRY = Boolean(process.env.SENTRY_AUTH_TOKEN)
 
   return {
     expo: {
@@ -113,7 +113,8 @@ module.exports = function (_config) {
         entitlements: {
           'com.apple.developer.kernel.increased-memory-limit': true,
           'com.apple.developer.kernel.extended-virtual-addressing': true,
-          'com.apple.security.application-groups': 'group.com.craftisanlabs.bluefly',
+          'com.apple.security.application-groups':
+            'group.com.craftisanlabs.bluefly',
         },
         privacyManifests: {
           NSPrivacyCollectedDataTypes: [
@@ -184,6 +185,9 @@ module.exports = function (_config) {
         // Firebase configuration file
         googleServicesFile: './google-services.json',
         package: 'com.craftisanlabs.bluefly',
+        // TV banner for Fire TV launcher (512x320px)
+        // Note: Create this asset and place it in assets/app-icons/
+        // tvBanner: './assets/app-icons/tv-banner.png',
         intentFilters: [
           {
             action: 'VIEW',
@@ -233,6 +237,7 @@ module.exports = function (_config) {
               compileSdkVersion: 35,
               targetSdkVersion: 35,
               buildToolsVersion: '35.0.0',
+              minSdkVersion: 24, // Support Android 7.0+ (API 24) - required by Hermes and native libraries
             },
           },
         ],
@@ -254,6 +259,7 @@ module.exports = function (_config) {
         './plugins/withAndroidDayNightThemePlugin.js',
         './plugins/withAndroidNoJitpackPlugin.js',
         './plugins/withAmazonIAP.js', // Amazon In-App Purchasing
+        './plugins/withAndroidTVSupport.js', // Android TV / Fire TV Support
         './plugins/shareExtension/withShareExtensions.js',
         './plugins/notificationsExtension/withNotificationsExtension.js',
         [
@@ -325,7 +331,8 @@ module.exports = function (_config) {
                 appExtensions: [
                   {
                     targetName: 'Share-with-BlueFly',
-                    bundleIdentifier: 'com.craftisanlabs.bluefly.Share-with-BlueFly',
+                    bundleIdentifier:
+                      'com.craftisanlabs.bluefly.Share-with-BlueFly',
                     entitlements: {
                       'com.apple.security.application-groups': [
                         'group.com.craftisanlabs.bluefly',

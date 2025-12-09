@@ -2,8 +2,8 @@ import '#/logger/sentry/setup'
 import '#/logger/bitdrift/setup'
 import '#/view/icons'
 
-import React, {useEffect, useState} from 'react'
-import {firebaseAnalytics} from '#/lib/analytics'
+import React, {useEffect, useRef, useState} from 'react'
+import {AppState, type AppStateStatus} from 'react-native'
 import {GestureHandlerRootView} from 'react-native-gesture-handler'
 import {
   initialWindowMetrics,
@@ -14,16 +14,18 @@ import * as SplashScreen from 'expo-splash-screen'
 import * as SystemUI from 'expo-system-ui'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
-import {Sentry} from '#/logger/sentry/lib'
 
+import {firebaseAnalytics, logSessionEvent} from '#/lib/analytics'
 import {KeyboardControllerProvider} from '#/lib/hooks/useEnableKeyboardController'
 import {Provider as HideBottomBarBorderProvider} from '#/lib/hooks/useHideBottomBarBorder'
+import {IAPProvider, PaywallProvider} from '#/lib/iap'
 import {QueryProvider} from '#/lib/react-query'
 import {Provider as StatsigProvider, tryFetchGates} from '#/lib/statsig/statsig'
 import {s} from '#/lib/styles'
 import {ThemeProvider} from '#/lib/ThemeContext'
 import I18nProvider from '#/locale/i18nProvider'
 import {logger} from '#/logger'
+import {Sentry} from '#/logger/sentry/lib'
 import {isAndroid, isIOS} from '#/platform/detection'
 import {Provider as A11yProvider} from '#/state/a11y'
 import {Provider as AgeAssuranceProvider} from '#/state/ageAssurance'
@@ -61,7 +63,6 @@ import {Provider as ProgressGuideProvider} from '#/state/shell/progress-guide'
 import {Provider as SelectedFeedProvider} from '#/state/shell/selected-feed'
 import {Provider as StarterPackProvider} from '#/state/shell/starter-pack'
 import {Provider as HiddenRepliesProvider} from '#/state/threadgate-hidden-replies'
-import {IAPProvider, PaywallProvider} from '#/lib/iap'
 import {TestCtrls} from '#/view/com/testing/TestCtrls'
 import * as Toast from '#/view/com/util/Toast'
 import {Shell} from '#/view/shell'
@@ -111,6 +112,11 @@ function InnerApp() {
   const {_} = useLingui()
   const hasCheckedReferrer = useStarterPackEntry()
 
+  // Track app state for analytics
+  const appState = useRef(AppState.currentState)
+  const sessionStartTime = useRef<number>(Date.now())
+  const hasTrackedSessionStart = useRef(false)
+
   // init
   useEffect(() => {
     async function onLaunch(account?: SessionAccount) {
@@ -129,6 +135,63 @@ function InnerApp() {
     const account = readLastActiveAccount()
     onLaunch(account)
   }, [resumeSession])
+
+  // Track session started/resumed events
+  useEffect(() => {
+    if (currentAccount?.did && !hasTrackedSessionStart.current) {
+      hasTrackedSessionStart.current = true
+      sessionStartTime.current = Date.now()
+
+      // Track session started
+      logSessionEvent('session_started', {
+        user_did: currentAccount.did,
+        login_method: 'resume', // Could be enhanced to track actual method
+      })
+
+      // Set user ID for analytics
+      firebaseAnalytics.setUserId(currentAccount.did)
+    } else if (!currentAccount?.did) {
+      hasTrackedSessionStart.current = false
+    }
+  }, [currentAccount?.did])
+
+  // Track app foreground/background events
+  useEffect(() => {
+    const handleAppStateChange = (nextAppState: AppStateStatus) => {
+      if (
+        appState.current.match(/inactive|background/) &&
+        nextAppState === 'active'
+      ) {
+        // App came to foreground
+        sessionStartTime.current = Date.now()
+        if (currentAccount?.did) {
+          logSessionEvent('app_foregrounded', {
+            user_did: currentAccount.did,
+          })
+        }
+      } else if (
+        appState.current === 'active' &&
+        nextAppState.match(/inactive|background/)
+      ) {
+        // App went to background
+        const sessionDuration = Date.now() - sessionStartTime.current
+        if (currentAccount?.did) {
+          logSessionEvent('app_backgrounded', {
+            user_did: currentAccount.did,
+            session_duration_ms: sessionDuration,
+          })
+        }
+      }
+
+      appState.current = nextAppState
+    }
+
+    const subscription = AppState.addEventListener(
+      'change',
+      handleAppStateChange,
+    )
+    return () => subscription.remove()
+  }, [currentAccount?.did])
 
   useEffect(() => {
     return listenSessionDropped(() => {

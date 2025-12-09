@@ -47,7 +47,7 @@
       "distribution": "store",
       "android": {
         "autoIncrement": true,
-        "buildType": "apk"
+        "buildType": "aab"
       },
       "channel": "production",
       "env": {
